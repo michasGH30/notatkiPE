@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Podstawy Elektroniki - Wykład 4</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Wykład 4</h1>
+    <h3>Dzielnik prądu</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>Dwa rezystory połącznone równolegle stanowią tzw. <b>dzielnik prądu</b></li>
+                <li>Z zalezności wynika, że:
+                    <ul>
+                        <li>Prądy płynące przez rezystory połączone równolegle rozpływają się odwrotnie proporcjonalnie do wartości ich resytancji
+                            \[\frac{I_1}{I_2} = \frac{G_1}{G_2} = \frac{R_2}{R_1}\]
+                        </li>
+                        <li>Prądy płynące przez rezystory połączone równolegle mają się tak do prądu całkowitego jak ich konduktancje do konduktancji zastępczej</li>
+                    </ul>
+                </li>
+            </ul>
+            \[I_1 = \frac{G_1}{G_1 + G_2}I = \frac{R_2}{R_1 + R_2}I, \ I_2 = \frac{G_2}{G_1 + G_2}I = \frac{R_1}{R_1 + R_2}I\]
+        </div>
+        <div>
+            <img src="images/w4_1.png" alt="">
+            \[I_1 = \frac{U}{R_1} = G_1U\]
+            \[I_2 = \frac{U}{R_2} = G_2U\]
+            \[I = I_1 + I_2 = (G_1 + G_2)U\]
+        </div>
+    </div>
+    <h3>Prąd w obwodzie nierozgałęzionym</h3>
+    <ul>
+        <li>Wniosek (zwany czasem II pramem Ohma)</li>
+        <li>Prąd w obwodzie nierozgałęzionym jest ilorazem sumy algebraicznej napięć źródłowych i sumy rezystancji w obwodzie.
+            \[I=\frac{\sum(E)}{\sum R}\]
+        </li>
+        <li>Napięcie źródłowe \(E\) bierzemy przy tym ze znakiem plus, jeżeli jego zwrot jest zgodny z przyjętym zwrotem prądu, a ze znakiem minus, jeżeli jego zwrot jest przeciwny do zwrotu prądu.</li>
+        <li>Rezystancje bierzemy zawsze ze znakiem plus.</li>
+    </ul>
+    <h3>Analiza obowdu nierozgałęzionego</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>Strzałkujemy <span class="pod">dowolnie</span> prąd, który jest jednakowy we wszystkich elementach</li>
+                <li><span class="pod">Przeciwnie</span> do prądu strzałkujemy napięcia na rezystorach.</li>
+                <li>Układamy równanie wg <span class="pod">napięciowego prawa Kircholffa</span>.
+                    \[E_1-U_1-U_2-U_3-E_2-U_4=0\]
+                </li>
+                <li>Napięcia na rezystorach wyrażamy za pomocą <span class="pod">prawa Ohma</span>.
+                    \[E_1-R_1I-R_2I-R_3I-E_2-R_4I=0\]
+                </li>
+                <li>Z otrzymanego równania <span class="pod">wyznaczamy prąd</span>.
+                    \[I(R_1+R_2+R_3+R_4)=E_1-E_2\]
+                    \[I=\frac{E_1-E_2}{R_1+R_2+R_3+R_4}\]
+                </li>
+                <li>W razie potrzeby obliczamy napięcia i inne wielkości.</li>
+            </ul>
+        </div>
+        <div>
+            <img src="images/w4_2.png" alt="">
+        </div>
+    </div>
+    
+    <h3>Obwód nierozgałęziony</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>Obwód nierozgałęziony zawiera tylko jedną gałąź, jedno oczko i żadnych węzłów.</li>
+                <li>Analiza obwodów nierozgałęzionych jest szczególnie łatwa, gdyż do wyznaczenia mamy tylko jeden prąd.</li>
+            </ul>
+        </div>
+        <div>
+            <img src="images/w4_3.png" alt="">
+        </div>
+    </div>
+    
+    <h3>II prawo Kircholffa - cd.</h3>
+    <div class="blok">
+        <div>
+            Zapisując równanie według druiegi prawa Kircholffa, korzystamy często od razu z prawa Ohma, aby wyrazić napięcie na rezystorze przez iloczyn jego rezystancji i prądu.
+            \[E_1 - R_2I_2 + R_3I_3 + R_4I_3 - E_2 - R_1I_1 = 0\]
+        </div>
+        <div>
+            <img src="images/w4_4.png" alt="">
+        </div>
+    </div>
+    <h3>II prawo Kircholffa (napięciowe)</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>Suma algebraiczna wszystkich napięć w oczku jest równa 0
+                    \[\sum(U,E)=0\]
+                </li>
+                <li>Przy sumowaniu napięć przymujemy pewien kierunek obiegu oczka i napięcia zastrzałkowane zgodnie z tym kierunkiem bierzemy ze znakiem plus, a napięcia zastrzałkowane przeciwnie bierzemy ze znakiem minus.</li>
+            </ul>
+        </div>
+        <div>
+            <img src="images/w4_5.png" alt="">
+        </div>
+    </div>
+    <h3>Twierdzenie o obwodzie zamkniętym</h3>
+    <p>Twierdzenie o obwodzie zamkniętym jest wynikiem <span class="poch">zasady zachowania energii</span>, a <span class="pod">twierdzenie o punkcie rozgałęzienia</span> wynika z <span class="poch">zasady zachowania ładunku</span>. Przy stosowaniu praw Kircholffa zakładamy jakiś kierunek prądu i jego natężenie w każdej gałęzi. Spadek napięcia pojawia sie gdy "przechodzimy" przez opornik w kierunku zgodnym z przyjętym kierunkiem prądu, a przyrost napięcia gdzy przechodzimy przez źródło SEM w kierunku od "-" do "+". Jeżeli w wyniku obliczeń otrzymamy ujemne natężenie prądu to znaczy, że rzeczywisty kierunek padu jest przciwny do przyjętego.</p>
+    <div class="blok">
+        <div>
+            <img src="images/w4_6.png" alt="" height="400px">
+        </div>
+        <div>
+            <img src="images/w4_7.png" alt="">
+        </div>
+    </div>
+    <figure>
+        <blockquote>
+            "W zamkniętym obwodzie suma spadków napięć na oporach jest równa jesy sumie sił elektromotorycznych występujących w tym obwodzie."
+        </blockquote>
+        <figcaption> II prawo Kircholffa</figcaption>
+    </figure>
+    <p>
+        Przy czym obwód ten może być elementem większej sieci. Wówczas nosi on nazwę oczka sieci. Prawo to zapisane równaniem na postać
+        \[\sum_{i}U_i=\sum_{i}\varepsilon_i\]
+        gdzie:
+        <ul>
+            <li>\(\varepsilon_i\) - SEM i-tego źródła napięcia</li>
+            <li>\(U_i\) - spadek napięcia na i-tym elemencie oczka.</li>
+        </ul>
+        Dla oporów omowych:<br>
+        \[U_i=I_iR_i\]
+        gdzie \(I_i\) jest natężeniem prądu płynącego przez opornik o oporze \(R_i\)<br>
+        Zarówno spadki napięcia jak i siły elektromotoryczne mogą przybierać wartości ujemne i dodatnie. Ich znak ustala się według następujących reguł:
+        <ul>
+            <li>ustala się kierunek obiegu obwodu (np. zgodnie z ruchem wskazówek zegara)</li>
+            <li>gdy kierunek prądu płynącego przez element obwodu jest zgodny z wyznaczonym kierunkiem obiegu, to spadek napięcia jest dodatni (w przypadku niezgodności - ujemny)</li>
+            <li>gdy SEM jest spolaryzowane zgodnie z kierunkiem obiegu, jej wartość jest dodatnia</li>
+        </ul>
+    </p>
+    <figure>
+        <blockquote>
+            "Dla węzła obwodu elektrycznego suma algebraiczna natężeń prądów wpływających i wypływających jest równa zeru."<br>
+            Lub:<br>
+            "Suma natężeń prądów wpływających do węzła jest równa sumie natężeń prądów wypływających z tego węzła."
+        </blockquote>
+        <figcaption> I prawo Kircholffa</figcaption>
+    </figure>
+    <p>
+        Dla rysunku:<br>
+    </p>
+    <img src="images/w4_8.png" alt="">
+    <p>I prawo Kircholffa można zapisać w postaci:
+        \[I_1+I_2+I_3-I_4-I_5=0\]
+        przyjmując konwencję, że prądy wpływające do węzła są dodatnie, zaś wypływające ujemne i traktując je jak wielkości algebraiczne lub w postaci:
+        \[I_1+I_2+I_3=I_4+I_5\]
+        biorąc pod uwagę tylko wartości prądów i zapisując prądy wpływające po jednej stronie, a prądy wypływające po drugiej stronie równania.<br>
+        W ogólnym przypadku wielu prądów prawo ma postać:
+        \[\sum_{n=1,2,...}I_n=0\]
+        przy czym nalezy pamiętać, że prądem wypływającym przypisuje się ujemną wartość natężenia.
+    </p>
+    <h3>Zamiana rzeczywistego źródła napięcia</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>Rzeczywiste źródło napięcia o SEM równej \(E\) i rezystancji wewnętrznej \(R_w\) można zastąpić rzeczywistym źródłem prądu</li>
+                <li>Prąd źródłowy oblicza się ze wzoru
+                    \[J=\frac{E}{R_w}\]
+                </li>
+                <li>Rezystancja źródła pozostaje bez zmian, ale jest teraz połączona równolegle.</li>
+                <li>Rozpływ prądów i rozkład napięć w pozostałej części obwodu nie ulegnie przy tym zmianie.</li>
+            </ul>
+        </div>
+        <div>
+            <img src="images/w4_9.png" alt="">
+        </div>
+    </div>
+    <h3>Charakterystyki rzeczywistych źródeł</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>Prównajmy charakterystyki prądowo-napięciowe rzeczywistych źródeł napięcia i prądu.</li>
+                <li>Obydwie mają taki sam kształt, co oznacza, że przy odpowiednim doborze parametrów jedno źródło mozna zastąpić drugim, co może ułatwić obliczenia.</li>
+                <li>Z rysunku wynika, że aby obydwie charakterystyki były identyczne wystarczy spełnić warunek:
+                    \[E=JR_w\]
+                </li>
+            </ul>
+        </div>
+        <div>
+            <img src="images/w4_10.png" alt="">
+        </div>
+    </div>
+    <h3>Rzeczywiste źródło</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>
+                    <span class="pog">Rzeczywiste źródło prądu charakteryzuje się tym, że wraz ze wzrostem napięcia na jego zaciskach prąd zmniejsza się.</span>
+                </li>
+                <li>Można to uwzględnić za pomocą rezystora \(R_w\), którego wartość interpretuje się jako rezystancję wewnętrzną źródła.</li>
+                <li>
+                    Rezystancja wewnętrzna źródła prądowego powinna być jak największa.
+                </li>
+                <li>Zwróćmy uwagę na sposób podłączenia rezystora (równolegle, a nie szeregowo).</li>
+                <li>Fikcyjna struktura w postaci idealnego źródła i równolegle podłączonego rezystora ułatwia obliczenia.</li>
+            </ul>
+        </div>
+        <div>
+            <img src="images/w4_11.png" alt="">
+            \[I=J-\frac{U}{R_w}\]
+            <img src="images/w4_12.png" alt="">
+        </div>
+    </div>
+    <h3>Idelane źródło prądu stałego</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>
+                    <span class="pog">Idealne źródło prądu stałego</span> to element aktywny, przez który płynie prąd \(I=const\) niezależnie od napięcia panującego na jego zaciskach.
+                </li>
+                <li>Prąd źródłowy często oznacza się \(J\).</li>
+                <li>Prąd na schematach elektrycznych źródła napięcia oznacza się zazwyczaj jednym z dwóch symboli.</li>
+            </ul>
+        </div>
+        <div>
+            <img src="images/w4_13.png" alt="">
+        </div>
+    </div>
+    <h3>Przykłady rzeczywistych źródeł napięcia</h3>
+    <p>
+        <ul>
+            <li>Wszelkiego rodzaju baterie chemiczne</li>
+            <li>Akumulatory</li>
+            <li>Prądnice prądu stałego</li>
+            <li>Ogniwa fotowoltaniczne</li>
+            <li>Zasilacze sieciowe z prostownikiem(np. ładowarki do telefonu)</li>
+            <li>Termopary(połączenia dwóch różnych metali)</li>
+        </ul>
+        Istotą działania źródła napięcia jest to, że pewne siły(np. chemiczne w bateriach, magnetyczne w prądnicach) wymuszją różnicę potencjałów pomiędzy zaciskami źródła.
+    </p>
+    <h3>Rzeczywiste źródła napięcia</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>
+                    <span class="pog">Rzeczywiste źródło napięcia</span> charakteryzuje się tym, że ze wzrostem prądu napięcie na jego zaciskach zmniejsza się.
+                </li>
+                <li>
+                    Można to uwzględnić za pomocą rezystora \(R_w\), którego wartość interpretuje się jako <span class="pog">rezystancję wewnętrzna</span> źródła.
+                </li>
+                <li>
+                    Rezystancja wewnętrzna źródła napięciowego powinna być jak najmniejsza.
+                </li>
+                <li>
+                    W rzeczywistości wewnątrz rzeczywistego źródła nie ma oddzielnie idealnego źródła i rezystancji, lecz SEM i \(E\) i rezystancja \(R_w\) rozłożone są w całym obszarze źródła.
+                </li>
+                <li>
+                    Fikcyjne rozdzielenie SEM i rezystancji wewnętrznej jest wygodne w obliczeniach.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <img src="images/w4_14.png" alt="">
+        </div>
+    </div>
+    <h3>Idealne źródło napięcia stałego</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>
+                    <span class="pog">Idealne źródło napięcia stałego</span> to element aktywny, na zaciskach, którego panuje napięcie \(U = const\) niezależne od płynącego prądu
+                </li>
+                <li>Napięcie źródłe nazywa się <span class="pog">siłą elektromotoryczną</span>(SEM) i często oznacza się \(E\) lub \(\varepsilon_w\).</li>
+                <li>
+                    Na schematach elektrycznych źródła napięcia oznacza się jednym z trzech symboli.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <img src="images/w4_15.png" alt="">
+        </div>
+    </div>
+    <h3>Obwody pasywne a aktywne</h3>
+    <p>
+        W sieci aktywnej występuje przynajmniej jeden element aktywnby. Sieci zbudowane wyłącznie z elementów pasywnych nazywamy paswnymi. Obwód statyczny, nazywamy też stratnym lub rezystancyjnymi, tworzą tylko oporniki. Jeżeli obwód zawiera przynajmniej jeden element \(L\) lub \(C\), który magazynuje energię, to jest in nazywany dynamicznym, niezaleznie od obecności \(R\). Obwód dynamiczny jest bezstratny, gdy nie zawiera rezystancji \(R\).
+    </p>
+    <h3>Właściwości obwodów RLC</h3>
+    <p>
+        Powyższe klasyfikacje można podsumować stwierdzeniem, że wszystkie układy złożone tylko z elemtnów \(R,L,C\) są pasywne, liniowe, odwracalne, niezmienne w czasie, skupione i bilateralne. Dla uproszczenia są one zwykle określane mianem systemów liniowych. Tego typu sieci oraz obwody aktywne, które powstają z dołączenia źródeł prądu i napięcia do elementów pasywnych, stanowią zasadniczy przedmiot naszych rozwiązań.
+    </p>
+    <h3>Obwód elektryczny</h3>
+    <p>
+        Najprostszy obwód elektryczny to obwód, który jest obwodem nierozgałęzionym. Składa się on z jednego elementu źródłowego, którym może być ogniwo oraz jednego elementu odbiorczego, którym może być rezystor, żarówka lub inny element. Elementy te nalezy ze sobą połączyć w taki sposób aby był możliwy przepływ prądu elektrycznego.<br>
+        Przy połączeniu tych elementów stworzone zostały warunki umożliwiające przepływ prądu. Obwód nazywane będziemy obwodem nierozgałęzionym, ponieważ w tym obwodzie występuje tylko jeden prąd elektryczny taki sam w obu elementach.
+    </p>
+
+    <div class="blok">
+        <div>
+            <img src="images/w4_16_1.png" alt="">
+            <p>
+                Schemat najprostszego obwodu elektrycznego nierozgałęzionego
+            </p>
+        </div>
+        <div>
+            <img src="images/w4_16_2.png" alt="">
+            <p>
+                Schemat obwodu elektrycznego rozgałęzionego o dwóch węzłach i trzech gałęziach
+            </p>
+        </div>
+    </div>
+    <h3>Topologia i geometria obwodu</h3>
+    <p>
+        W teorii obwodów elektrycznych topologia układu charakteryzuje sposób połączenia jego obwodu jest niezbędne do zrozumienia jego działania, więc stanowi podstawowy etap wszystkich metod analizy. Topologię obwodu charakteryzują węzły, gałęzie i oczka.
+    </p>
+    <ul>
+        <li>Gałąź obwodu jest tworzona przez jeden lub kilka elementów połączonych ze sobą w określony sposób.</li>
+        <li>Węzłem obwodu jest zacisk będący końcówką gałęzi. Gałąź obwodu tworzą elementy ograniczone dwoma węzłami.</li>
+        <li>Oczko obwodu to zbiór gałęzi połączonych ze sobą i tworzących drogę zamkniętą dla prądu elektrycznego.</li>
+        <li>Element jest częścią składową obwodu niepodzielną pod względem funkcjonalnym bez utraty swych cech Charakterystycznych.</li>
+    </ul>
+    <h3>Klasyfikacja elemetów elektronicznych</h3>
+    <p>
+        popsute zdjęcie.
+    </p>
+    <h3>Dwójniki i wielobieguniki</h3>
+    <ul>
+        <li>Element mający dwa zaciski nazywamy <span class="pog">dwójnikiem</span>(np. rezystor, cewka, bateria).</li>
+        <li>Element mający więcej zacisków nazywamy <span class="pog">wielobiegunikiem</span>(np. tranzystor jest trójnikiem, gdyż ma trzy zaciski).</li>
+    </ul>
+    <h3>Elementy odrwacalne i nieodwracalne</h3>
+    <ul>
+        <li>Element jest <span class="pog">odwracalny</span>, jeżeli ma takie same właściwości niezależnie od biegunowości przyłożonego napięcia(np. rezystor).</li>
+        <li>Element jest <span class="pog">nieodwracalny</span>, jeżeli jego właściwości zależą od biegunowości przyłożonego napięcia(np. dioda).</li>
+        <li>Najpierw zajmiemy się elementami omówimy w dalszej kolejności.</li>
+    </ul>
+    <h3>Dwójniki i wielobieguniki (RLC)</h3>
+    <p>
+        Elementy o stałych, niezmiennych względem czasu parametrach(np. R, L, C) są nazywane niezmiennymi w czasie. W przeciwnym razie okresla się je mianem elementów zmiennych w czasie.<br>
+        Element bilateralny(np. R, L, C) dopuszcza przepływ energii w obydwu kierunkach. W elemencie uniteralnym(np. tranzystorze i diodzie półprzewodnikowej) energia może przepływać tylko w jednym kierunku.<br>
+        Elementy z dwoma zaciskami noszą nazwę jednoportowych. Należą do nich \(R, L, C\), oraz diody. Elementy o czterech zaciskach(lub trzech, jeżeli jeden z zacisków można traktować jako dwa zwarte) są nazywane elementami dwuportowymi. Przykładami elementów dwuportowych są: transformatorym żyratory(przyrządy czterokońcówkowe) i tranzystory(przyrządy trzykońcówkowe). Elementy, które posiadają więcej niż dwa zaciski, są ogólnie okreslane mianem wieloportowych.
+    </p>
+    <h3>Element liniowy</h3>
+    <p>
+        Sposób działania elementu liniowego nie zalezy od natężenia prądu płynącego przezeń ani od napięcia na jego zaciskach. Związek między prądem i napięciem(w przypadku R) lub jedną z tych wielkości, a szybkością zmian drugiej(w przypadku L i C) jest propoporcjonalnością prostą, co zilustrowaną na rys.
+        <br>
+        Przykładami elementów liniowych są idealne R, L i C.<br>
+        Element nieliniowy charakteryzuje się tym, że jego oddziaływanie na obwód zalezy od napięcia na nim lub od napięcia płynącego przezeń prądu. W przypadku takiego elementu związki między napięciem a prądem nie można opisać linią prostą. Prztkładami elementówq nieliniowych sa m.in.: rezystor drutowy, żarówka elektryczna, cewka z rdzeniem ferromagnetycznym oraz kondensator z ferrodielektrykiem. 
+    </p>
+    dużo wykresów.<br>
+    <h3>Połączenia elektryczne</h3>
+    <p>
+        <ul>
+            <li>Połączenia między elementami wykonuje się za pomocą przewodów elektrycznych poprzez zamocowanie jednego końca przewodu do jednego z zacisków pierwszego elementu, a drugiego końca przewodu do jednego z zacisków drugiego elementu.</li>
+            <li>Idealny przewód jest elementem <span class="pod">bezrezystancyjnym</span> \(R=0\).</li>
+            <li>Rzeczywiste przewody mają pewną(raczej niewielką) rezystancję.</li>
+            <li>Przewody elektryczne wykonuje się z nardzo dobrych przewodników - typowo jest to miedź.</li>
+            <li>W teorii obwodów połaczenia między elementami traktuje się zawsze jako idealne \(R=0\), chyba że wyraźnie zaznaczono inaczej.</li>
+        </ul>
+    </p>
+    <div class="blok">
+        <img src="images/w4_17.png" alt="">
+    </div>
+    <h3>Elementy, przyrządy i komponenty</h3>
+    <p>
+        Podstawową jednostką obowdu elektrycznego jest element. Element może dostarczać energię do obwodu(tak jak źródła napięcia i prądu) lub ją z niego pobierać(tak jak rezystory \(R\), kondesatory \(C\) i cewki \(L\)). Istnieją pewne elementy(takie jak diody, tranzystory, wzmacniacze operacyjne i transformatory), które ze względu na bardziej skomplikowane działanie są często nazywane przyrządami. Zarówno elementy, jak i przyrządy są określane mianem komponentów.
+    </p>
+    <p>
+        Elementy nazywamy pasywnymi lub biernym, gdy rozprasza on energię elektryczną, która jest dostarczane do niego z pozostałej części obwodu, jak \(R\), albo magazynuje, jak \(L\) i \(C\).
+    </p>
+    <p>
+        Elementy aktywne dostarczają energię do obwodu(źródła prądu i napięcia) lub zwiększają moc sygnału(np. tranzystory). Aktywny element można rozpoznać po tym, że jego schemat zastępczy zawiera źródła napięcia i/lub prądu.
+    </p>
+    <h3>Obwód</h3>
+    <p>
+        Obwodem elektrycznym nazywamy taki obwód, który tworzą elementy połączone ze sobą w taki sposób, że istnieje co najmniej jedna droga zamknięta dla przepływu prądu.
+    </p>
+    <p>
+        Obwód jest odwzorowywany poprzez swój schemat, na którym zaznaczone są symbole graficzne elementów oraz sposób ich połączenia ze sobą, tworzący okresloną strukturę.
+    </p>
+    <p>
+        <span class="pog">Element</span> jest częścią składową niepodzielną pod względem funkcjonalnym bez straty swych cech Charakterystycznych. Na elementy obwodu składają się źródła energii elektrycznej, oraz elementy akumulujące energię lub rozpraszające ją. W każdym elemencie mogą zachodzić dwa lub nawet wszystkie trzy wymienione tu procesy, choć jeden z nich jest zwykle dominujący. Element jest idealny, jeśli charakteryzuje go tylko jeden rodzaj procesu energetycznego.
+    </p>
+    <p>
+        Głównymi elementami obwodu elektrycznego są elementy źródłowe zwane także elementami aktywnymi oraz elementy odbiorczem, inaczej nazywane elementami pasywnymi.
+    </p>
+    <p>
+        Elementy posiadające zdolność akumulacji oraz rozpraszania energii tworzą klasę <span class="pog">elementów pasywnych</span>. Nie wytwarzają one energii a jedynie ją przetwarzają. Najważniejsze z nich to <span class="pog"></span>
+    </p>
+</body>
+</html>
