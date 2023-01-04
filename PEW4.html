@@ -383,7 +383,59 @@
         Głównymi elementami obwodu elektrycznego są elementy źródłowe zwane także elementami aktywnymi oraz elementy odbiorczem, inaczej nazywane elementami pasywnymi.
     </p>
     <p>
-        Elementy posiadające zdolność akumulacji oraz rozpraszania energii tworzą klasę <span class="pog">elementów pasywnych</span>. Nie wytwarzają one energii a jedynie ją przetwarzają. Najważniejsze z nich to <span class="pog"></span>
+        Elementy posiadające zdolność akumulacji oraz rozpraszania energii tworzą klasę <span class="pog">elementów pasywnych</span>. Nie wytwarzają one energii a jedynie ją przetwarzają. Najważniejsze z nich to <span class="pog">rezystor</span>, <span class="pog">kondensator</span> oraz <span class="pog">cewka</span>. Elementy mające zdolność generacji energii nazywane są <span class="pog">źródłami</span>. Zaliczamy do nich niezależne <span class="pog">źródło napięcia i prądu</span> oraz <span class="pog">źródła sterowane</span>.
+    </p>
+    <p>
+        W schemacie obwodu elektrycznego oznaczmy źródła napięcia również za pomocą znormalizowanych symboli graficznych.
+    </p>
+    <h3>Przykład - moc</h3>
+    <p>
+        <ul>
+            <li>
+                Jaki prądy płynie w żarówce samochodowej o mocy 55 W zasilanej napięciem z akumulatora(12 V)?
+                \[P=UI \Rightarrow I = \frac{P}{U} = \frac{55}{12} \approx 4,6A\]
+            </li>
+            <li>
+                Jaką moc oddaje bateria 1,5 V, jeżeli płynie przez nią prąd 20 mA?
+                \[P = UI = 1,5 * 20 = 30 mW\]
+            </li>
+        </ul>
+    </p>
+    <h3>Moc prądu elektrycznego</h3>
+    <p>
+        <ul>
+            <li>
+                Moc prądu stałego o natężeniu \(I\) oddawana między punktami, między którymi panuje napięcie \(U\), wynosi
+                \[P = \frac{W}{t} = \frac{UIt}{t} = UI\]
+            </li>
+            <li>
+                Gdy zwroty strzałek napięcia \(U\) i prądu \(I\) są zgodne wartość uważamy za moc wydawaną do obwodu, w przeciwnym razie - moc pobieraną z obwodu.
+            </li>
+            <li>
+                Obliczna wartość może być ujemna - wtedy moc pobierana staje się faktycznie mocą oddawaną i na odwrót.
+            </li>
+        </ul>
+    </p>
+    <h3>Moc</h3>
+    <p>
+        <ul>
+            <li>
+                Moc \(p\) jest to granica ilorazu pracy \(\Delta W\) wykonanej w czasie \(\Delta t\) do tego czasu, gdy czas dąży do zera
+                \[p=\lim_{det \Delta t \rightarrow 0}(\frac{\Delta W}{\Delta t}) = \frac{dW}{dt}\]
+            </li>
+            <li>Jednostką mocy jest wat(1 W).</li>
+            <li>Jeżeli w każdej jednostce czasu \(t\) wykonywana jest jednakowa praca \(W\), to moc jest stała i wynosi
+                \[P = \frac{W}{t}\]
+            </li>
+        </ul>
+    </p>
+    <h3>Moc w czasie</h3>
+    <p>
+        Energia elektryczna jest przekazywana ze źródła do dbiornika za pośrednictwem prądu i napięcia, które muszą być jednocześnie niezerowe. Jest to oczywiste, gdyż bateria, choć cały czas wytwarza napięcie o ustalonej wartości, nie oddaje energii, dopóki nie zostanie użyta w urządzeniu, tak, że napięciu będzie towrzyszył prąd i razem utworzą one moc.
+    </p>
+    <p>
+        Moc elementu (źródla, \(R\), \(L\) lub \(C\)) jest bowiem określona iloczynem jego napięcia i  pradu:
+        \[p(t)=u(t)i(t)\]
     </p>
 </body>
 </html>

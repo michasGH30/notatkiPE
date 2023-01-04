@@ -5,6 +5,11 @@ body
     color:white;
     font-size: 20px;
 }
+a
+{
+    color:white;
+    text-decoration: none;
+}
 .blok
 {
     display:flex;
