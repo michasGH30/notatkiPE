@@ -437,5 +437,133 @@
         Moc elementu (źródla, \(R\), \(L\) lub \(C\)) jest bowiem określona iloczynem jego napięcia i  pradu:
         \[p(t)=u(t)i(t)\]
     </p>
+    <h3>Energia elektryczna i moc</h3>
+    <p>
+        <span class="pog">Energia elektryczna \(W\)</span> (w dżulach) nadaną ładunkowi \(Q\) (w kulombach) przepływającego prądu \(I\) (w amperach) w ciągu czasu \(t\)(w sekundach) przez źródło o sile elektromotorycznej \(E\) (w woltach) wyraża wzór:
+        \[W=EIt\]
+        Natomiast wzór:
+        \[W=UIt\]
+        wyraża wartość energii wydzielonej w odbiorniku lub przewodach w czasie przepływu prądu przez odbiornik albo przez przewody, przy czym \(U\) jest napięciem (w woltach) między zaciskami odbiornika lub źródła lub skapdkiem napięcia na przewodach wiodących prąd (czylki różnicą napięć na źródle i odbiorniku).
+    </p>
+    <p>
+        <span class="pog">Moc \(P\)</span> mierzoną w watach (W), czyli energię \(W\) (w dżulach) w czasie jednostce czasu (w sekundach) wytworzoną przez źródło energii elektrycznej o siłe elektromotorycznej \(E\) obciążonej prądem \(I\), wyraża wzór:
+        \[P=\frac{W}{t}=EI\]
+        Natomiast moc pobieraną przez odbiornik (przy napięciu \(U\) na zaciskach odbiornika i prądzie \(I\) pobieranym przez ten odbiornik) wyraża wzór:
+        \[P=\frac{W}{t}=UI\]
+        gdzie \(E\) lub \(U\) w woltach, a \(I\) w amperach.
+    </p>
+    <h3>Przykład - napięcie, prąd i praca</h3>
+    <p>
+        Obliczyć pracę wykonaną podczas przepływu prądu o natężeniu \(I\) = 10 A, przez \(t\) = 2 minuty pomiędzy punktami o potencjałach \(V_A = 20\) V i \(V_B = 8\) V.
+        \[W_{AB}=QU_{AB}=ItU_{AB}=It(V_A-V_B)=10[A]*2*60[s]*(20-8)[V]=14400 J\]
+    </p>
+    <h3>Praca i moc prądu stałego</h3>
+    <p>
+        <ul>
+            <li>Przeniesienie ładunku \(Q\) z punktu \(A\) do punktu \(B\), pomiędzy którymi panuje napięcie \(U_{AB}\), wymaha wykonania pracy(dostarczenia energii)
+                \[W_{AB}=QU_{AB}\]
+            </li>
+            <li>Przy prądzie stałym \(Q=It\), stąd
+                \[W_{AB}=U_{AB}It\]
+            </li>
+            <li>Jednostką pracy jest dżul (1 J), ale często stosuje się kWh, zwłaszcza w rozliczeniach energetycznych.</li>
+        </ul>
+    </p>
+    <h3>Rzeczywisty kondensator</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>Ponieważ dielektryk znajdujący się między okładkami kondensatora nigdy nie jest idealny, kondensator przewodzi w pewnym stopniu prąd stały.</li>
+                <li>Schemat zastępczy kondensatora rzeczywistego zawiera zatem równoległe podłączony rezystor o pewnej konduktancji, którą w tym przypadku nazywa się <span class="pog">upływnością</span>.</li>
+                <li>Dąży się do tego, aby kondensator miał jak najmniejszą upływność (jak największą rezystancję).</li>
+            </ul>
+        </div>
+        <div>
+            <img src="images/w4_18.png" alt="">
+        </div>
+    </div>
+    <h3>Rzeczywisty rezystor</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>Rzeczywisty rezystor charakteryzuje się nie tylko rezystancją, ale także:
+                    <ul>
+                        <li>pewną indukcyjnością związaną z tym, że prądowi płynącemu przez niego towarzyszy pole magnetyczne</li>
+                        <li>pewną pojemnością pomiędzy jego zaciskami.</li>
+                    </ul>
+                </li>
+                <li>Schemat zastępczy rzeczywistego rezystora pokazany jest na rysunku.</li>
+                <li>W większości przypadków indukcyjność i pojemność są pomijalnie małe i można ich nie uwzględniać.</li>
+            </ul>
+        </div>
+        <div>
+            <img src="images/w4_19.png" alt="">
+        </div>
+    </div>
+    <h3>Rzeczywista cewka</h3>
+    <div class="blok">
+        <div>
+            <ul>
+                <li>Drut, z którego wykonana jest cewka zawsze posiada pewną rezystancje (wyjątek stanowi tzw. nadprzewodnik).</li>
+                <li>Dlatego rzeczywista cewka oprócz indukcyjności charakteryzuje się także pewną rezystancją, której NIE MOŻNA pominąć.</li>
+                <li>Dąży się, aby rezystancja cewki była jak najmniejsza.</li>
+            </ul>
+        </div>
+        <div>
+            <img src="images/w4_20.png" alt="">
+        </div>
+    </div>
+    <h3>Rzeczywiste elementy bierne</h3>
+    <p>Elementami odbiorczymi (pasywnymi, biernymi) są rezystory, cewki i kondensatorym różnego rodzaju przetworniki energii elektrycznej w energię mechaniczną(silniki elektryczne), chemiczne(w procesie elektrolizy), świetlną(wyładowanie w gazie) itp.</p>
+    <p>Przyjmujemy, że symbole \(R\), \(L\) i \(C\) oznaczają elementy idealne. Jednak idealne kondesatory, cewki i oporniki nie wystepują w praktyce: każdy rzeczywisty element wytwarza pole elektryczne i magnetyczne oraz rozprasza energię, wydzielając ciepło. Oznacza to, że rzeczywisty element mozna postrzegać jako połączenie pojemności, indukcyjności i rezystancji, przy czym jedna wielkość jest wiodąca i pożyteczna,a pozostałe mają znikome wartości i pasożytniczy charakter.</p>
+    <h3>Coś z mieszanymi cewkami, nic nie widać xD</h3>
+    <h3>Energia w cewkach</h3>
+    <p>Wytwarzając pole magnetyczne idealna cewka magazynuje dostarczoną do niej energię elektryczną w postaci energii magnetycznej. Chwilowa energia w cewce jest okreslona wzorem:
+        \[Jakiś wzór chuja widać\]
+    </p>
+    <p>oddziaływanie dwóch cewek stanowi podstawę działania transformatora.</p>
+    <p>Podobnie jak w przypadku rezystorów i kondensatorów, mozna rozpatrywać indukcyjność zastępczą układu cewek. Gdy cewki są połączone szeregowo jest ona okreslona sumą poszczególnych indukcyjności:
+        \[I_n = L_1 + L_2 + L_3 + \dots\]
+        natomiast gdy cewki są połączone równolegle:
+        \[\frac{1}{I_n}=\frac{1}{L_1} + \frac{1}{L_2} + \frac{1}{L_3} + \dots\]
+    </p>
+    <h5>Przykład</h5>
+    <p>
+        Obliczyć zastępczą indukcyjność \(I_n\), która odpowiada połączeniu szeregowemu cewek \(L_1 = 600 \mu H\), \(L_2 = 0,3 mH\) i \(L_3 = 0,08 mH\)
+    </p>
+    <h5>Rozwiązanie</h5>
+    <p>
+        Indukcyjność zastępcza jest równa sumie indukcyjności poszczególnych cewek:
+        \[I_n = L_1 + L_2 + L_3 = 0,98 mH\]
+    </p>
+    <h3>Cewka - podsumowanie</h3>
+    <p>
+        <ul>
+            <li>Nie rozprasza energii, lecz magazynuje energię w polu magnetycznym</li>
+            <li>charakteryzuje się indukcyjnością \(L_i\)</li>
+            <li>Cewka bez elementów ferromagnetycznych jest liniowa, a z elementami ferromagnetycznymi jest nieliniowa</li>
+            <li>W stanie ustalonym dla prądu stałego stanowi zwarcie - napięcie na jej zaciskach jest równe zeru, ale może płynąć przez nią prąd</li>
+        </ul>
+    </p>
+    <h3>Cewka (idealna)</h3>
+    <p>
+        <ul>
+            <li><span class="pog">Cewka (induktor)</span> jest dwójnikiem pasywnym zachowawczym zdolnym do gromadzenia energii w polu magnetycznym.</li>
+            <li>Nazwa pochodzi od tego, że wystepuje przeważnie jako wiele nawiniętyczh ciasno zwojów drutu. Druga nazwa wzięła się od tego, że indukuje się w niej napięcie zwane siłą elektromotoryczną.</li>
+            <li>Na chematach elektrycznych oznacza się ją w postaci trzech wybrzuszeń symbolizujących zwoje.</li>
+        </ul>
+    </p>
+    <h3>Pole megnetyczne i indukcyjność</h3>
+    <p>Wokół każdego przewodnika, przez który płynie prąd i ogólnie wokół poruszających się ładunków lub naładowanych ciał oprócz pola elektrycznego występuje pole magnetyczne. Często jest ono słabe, że mozna zaniedbać jego oddziaływanie, ale są elementy o obwody, których działanie opiera się na wytwarzaniu pola magnetycznego lub reagowania na jego zmiany.</p>
+    <p>W dalszych rozważaniach będziemy zakładać, że oddziaływań elektrycznych nie ma w otoczeniu idealnych rezystorów, które tylko przekształcają energię elektryczną w termiczną i idealnych kondensatorów, które tylko magazynują energię elektryczną. Pole magnetyczne interesuje nas głównie ze względu na jego kluczowe znaczenie dla działania trzeciego podstawowego elementu elektrycznego, czyli cewki, nazywanej induktorem.</p>
+    <h3>Indukcyjność</h3>
+    <p>Cewka (induktor) powstaje w wyniku ukształtowania przewodnika w zwoje, które otaczają powietrze lub rdzeń z materiału magnetycznego, np. rdzeń ferromagnetycznych. Liczba zwojów oraz wymiary i ridzaj rdzenia określają podtsawowy parametr indukcyjność własną, która jest określana symbolem \(L\) i mierzona w henrach [H].</p>
+    <p>Jeżeli przez cewkę płynie prąd o zmieniającym się natężeniu \(i_L(t)\), to indukuje się w niej siła elektromotoryczna. Między zaciskami elementu występuje napięcie, którego wartość jest liniowo propoporcjonalna do szybkości zmian prądu:
+        \[u_L(t) = L\frac{di_l(t)}{dt}\]
+        przy czym indukcyjność własna stanowi współczynnik propoporcjonalności. Kierunek \(u_L(t)\) jest zawsze przeciwny do zwrotu \(\frac{di_L(t)}{dt}\), zgodnie z regułą Lenza.
+    </p>
+    <h3>Źródła energii elektrycznej</h3>
+    <p>Urządzenie, które dostarcza energię elektryczną do innych, jest nazywane źródłem, zaś urządzenie, które pobiera energię ze źródła jest okreslane obciążenia (ang. <span class="poch">load</span>). Przykładami źródeł sa baterię, prądnice (generatory) róznego rodzaju: agregaty prądotwórcze, alternatory samochodowe, dynama rowerowe. Oczywiście źródła nie wytwarzają energii elektrycznej z niczego, a tylko przekształcają w prąd i napięcie inne rodzaje energii, najczęściej mechanicznej(prądnice) albo chemicznej(baterie). Rozróżnia sie generatory prądu stałego i zmiennego, podczas gdy baterię mogą dostarczać tylko prąd stały.</p>
+    <p>Oprócz nominalnego napięcia lub prądu, waznym parametrem źródła jest rezystancja wewnętrzna, czyli pasożytniczy opór wynikający z konstrukcji urządzenia i przejmujący część enrgii, która powinna być dostarczana do obciążenia. W niektórych sytuacjach zaniedbuje się rezystancję wewnętrzną i przyjmuje źródło za idealne, które może być reprezentowane w układzie jednym symbolem. Jednak nierzadko trzeba rozpatrywać źródła rzeczywiste, czyli połączenie źródła idealnego z oprnikiem, który reprezentuje rezystancję wewnętrzną.</p>
 </body>
 </html>
