@@ -1,225 +1,496 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Podstawy Elektroniki - Wykład 1</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Wykład 1</h1>
-    <h3>Ładunek elektryczny</h3>
-    <p>
-        Istnienie ładunków można stwierdzić w najprostszym znanym nam powszechnie zjawisku elektryzowania się ciał. Doświadczenie pokazuje, że w przyrodzie mamy do czynienia z dwoma rodzajami ładunków: dodatnimi i ujemnymi, oraz że ładunki jednoimienne odpychają się, a różnoimienne przyciągają się.
-    </p>
-    <h3>Jednostki</h3>
-    <p>
-        W układzie SI jednostką ładunku jest kulomb (C). jest to ładunek przenoszony przez prąd o natężeniu 1 ampera w czasie 1 sekundy; C = A * s
-    </p>
-    <h3>Kwantyzacja ładunku</h3>
-    <p>
-        Również doświadczalnie stwierdzono, że żadne naładowane ciało nie może mieć ładunku mniejszego niż ładunek elektronu lub protonu. Ładunki te równe co do wartości bezwzględnej nazywa się <b>ładunkiem elementarnym</b> \(e = 1.6 * 10^{-19} \ C \). Wszystkie realnie istniejące ładunki są wielokrotnością ładunku e. Jeżeli wielkość fizyczna, taka jak ładunek elektryczny, występuje w postaci określonych "porcji" to mówimy, że wielkość ta jest <b>skwantowana</b>.
-    </p>
-    <h3>Ładunki elektryczne</h3>
-    <p>
-        <ul>
-            <li> dodatni (symbol +q), którym obdarzone są na przykład protony</li>
-            <li>ujemny (symbol -q) w który uzbrojony jest każdy elektron</li>
-            <li>neutralny - nie ma on jakiegoś specjalnego symbolu, gdyż cząstki o ładunku neutralnym (np. neutrony) traktujemy jakby tego ładunku po prostu nie miały (ich ładunek wynosi 0)</li>
-        </ul>
-        Dlaczego istnieją aż trzy rodzaje ładunków? Nie wiemy :) Wiemy natomiast, że ładunki w zależności od rodzaju mogą oddziaływać ze sobą na <b>trzy sposoby:</b>
-        <ul>
-        <li>ładunek dodatni z ujemnym będą się przyciągać.</li>
-        <li>ładunek dodatni z dodatnim (lub ujemny z ujemnym) będą się odpychać.</li>
-        <li>ładunki neutralne nie będą oddziaływać z żadnym ładunkiem.</li>
-        </ul>
-        <img src="images/w1_1.png">
-    </p>
-    <h3>Prawo Coulomba</h3>
-    <p>
-        Siła Coulombowska <span style="color:red">podlega trzeciej zasadzie dynamiki</span> Newtona: siły oddziaływania dwóch ładunków punktowych są sobie równe co do wartości bezwzględnej, lecz przeciwne zwrócone wzdłuż prostej łączącej te ładunki.
-        \[\displaystyle \begin{array}{1}
-        k = \frac{1}{4\pi\varepsilon_{0}} = 9,0 \ * \ 10^{9} \ \frac{N * m^2}{C^2} \\
-        \varepsilon_{0} = 8,85418 \ * \ 10^{-12} \ \frac{C^2}{N * m^2} \\
-        F = k \frac{q_1 \ q_2}{r^2}
-        \end{array}\]
-        w układzie SI jednostką ładunku jest kulomb (C)
-        \(1e = 1,602 * 10^{-19} \ C \) 
-        Oddziaływanie ładunków zależy od ośrodka w jakim znajdują się ładunki. Fakt ten uzwględniamy wprowadzając stałą materiałową \(\varepsilon_r\) zwaną względną przenikalnością elektryczną ośrdoka, tak, że prawo Coulomba przyjmuje postać
-        \[F = \frac{1}{4\pi\varepsilon_0\varepsilon_r}\frac{q_1 \ q_2}{r^2}\]
-        Wartością \(\varepsilon_r\) dla wybranych substancji zestawiono w tabeli
-        Tab. Względne przenikalności elektryczne
-        <table>
-            <tr><th>ośrodek</th><th>\(\varepsilon_r \)</th></tr>
-            <tr><td>próżnia</td><td>1</td></tr>
-            <tr><td>powietrze</td><td>1,0006</td></tr>
-            <tr><td>parafina</td><td>2</td></tr>
-            <tr><td>szkło</td><td>10</td></tr>
-            <tr><td>woda</td><td>81</td></tr>
-        </table>
-    </p>
-    <h3>Prawo, zasada, twierdzenie</h3>
-    <p>
-        Gdy mamu do czynienia z kilkoma naładowanymi ciałami, siłę wypadkową, analogicznie jak w przypadku siły grawitacyjnej, obliczamy dodająć wektorowo poszczególne siły 2-ciałowe.
-    </p>
-    <h3>Przykład</h3>
-    <p>
-        Dipol elektryczny składa się z dwóch ładunków +Q i -Q oddalonych od siebie i l. Obliczmy siłę jaka jest wywierana na dodatni ładunek q umieszczony na symetralnej dipola.<br>
-        <img src="images/w1_2.png">
-    </p>
-    <h3>Pole elektryczne</h3>
-    <p>
-        Centralne pole elektrostatyczne wokół ładunków.
-        <div class="blok">
-            <div>
-                dodatniego "+"<br>
-                <img src="images/w1_3_dod.png">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+        />
+        <title>Podstawy Elektroniki - Wykład 4</title>
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="reveal.css" />
+        <link rel="stylesheet" href="some.css" />
+        <link rel="stylesheet" href="black.css" id="theme" />
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script
+            id="MathJax-script"
+            async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+        ></script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section id="title-slide">
+                    <h1 class="title">Podstawy Elektroniki - Wykład 1</h1>
+                </section>
+                <section class="slide level1">
+                    <h3>Ładunek elektryczny</h3>
+                    <p>
+                        Istnienie ładunków można stwierdzić w najprostszym
+                        znanym nam powszechnie zjawisku elektryzowania się ciał.
+                        Doświadczenie pokazuje, że w przyrodzie mamy do
+                        czynienia z dwoma rodzajami ładunków: dodatnimi i
+                        ujemnymi, oraz że ładunki jednoimienne odpychają się, a
+                        różnoimienne przyciągają się.
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Jednostki</h3>
+                    <p>
+                        W układzie SI jednostką ładunku jest kulomb (C). jest to
+                        ładunek przenoszony przez prąd o natężeniu 1 ampera w
+                        czasie 1 sekundy; C = A * s
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Kwantyzacja ładunku</h3>
+                    <p>
+                        Również doświadczalnie stwierdzono, że żadne naładowane
+                        ciało nie może mieć ładunku mniejszego niż ładunek
+                        elektronu lub protonu. Ładunki te równe co do wartości
+                        bezwzględnej nazywa się
+                        <b>ładunkiem elementarnym</b> \(e = 1.6 * 10^{-19} \ C
+                        \). Wszystkie realnie istniejące ładunki są
+                        wielokrotnością ładunku e. Jeżeli wielkość fizyczna,
+                        taka jak ładunek elektryczny, występuje w postaci
+                        określonych "porcji" to mówimy, że wielkość ta jest
+                        <b>skwantowana</b>.
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Ładunki elektryczne</h3>
+                    <p></p>
+                    <ul>
+                        <li>
+                            dodatni (symbol +q), którym obdarzone są na przykład
+                            protony
+                        </li>
+                        <li>
+                            ujemny (symbol -q) w który uzbrojony jest każdy
+                            elektron
+                        </li>
+                        <li>
+                            neutralny - nie ma on jakiegoś specjalnego symbolu,
+                            gdyż cząstki o ładunku neutralnym (np. neutrony)
+                            traktujemy jakby tego ładunku po prostu nie miały
+                            (ich ładunek wynosi 0)
+                        </li>
+                    </ul>
+                    Dlaczego istnieją aż trzy rodzaje ładunków? Nie wiemy :)
+                    Wiemy natomiast, że ładunki w zależności od rodzaju mogą
+                    oddziaływać ze sobą na <b>trzy sposoby:</b>
+                    <ul>
+                        <li>ładunek dodatni z ujemnym będą się przyciągać.</li>
+                        <li>
+                            ładunek dodatni z dodatnim (lub ujemny z ujemnym)
+                            będą się odpychać.
+                        </li>
+                        <li>
+                            ładunki neutralne nie będą oddziaływać z żadnym
+                            ładunkiem.
+                        </li>
+                    </ul>
+                    <img src="images/w1_1.png" />
+                </section>
+                <section class="slide level1">
+                    <h3>Prawo Coulomba</h3>
+                    <p>
+                        Siła Coulombowska
+                        <span style="color: red"
+                            >podlega trzeciej zasadzie dynamiki</span
+                        >
+                        Newtona: siły oddziaływania dwóch ładunków punktowych są
+                        sobie równe co do wartości bezwzględnej, lecz przeciwne
+                        zwrócone wzdłuż prostej łączącej te ładunki.
+                        \[\displaystyle \begin{array}{1} k =
+                        \frac{1}{4\pi\varepsilon_{0}} = 9,0 \ * \ 10^{9} \
+                        \frac{N * m^2}{C^2} \\ \varepsilon_{0} = 8,85418 \ * \
+                        10^{-12} \ \frac{C^2}{N * m^2} \\ F = k \frac{q_1 \
+                        q_2}{r^2} \end{array}\] w układzie SI jednostką ładunku
+                        jest kulomb (C) \(1e = 1,602 * 10^{-19} \ C \)
+                        Oddziaływanie ładunków zależy od ośrodka w jakim
+                        znajdują się ładunki. Fakt ten uzwględniamy wprowadzając
+                        stałą materiałową \(\varepsilon_r\) zwaną względną
+                        przenikalnością elektryczną ośrdoka, tak, że prawo
+                        Coulomba przyjmuje postać \[F =
+                        \frac{1}{4\pi\varepsilon_0\varepsilon_r}\frac{q_1 \
+                        q_2}{r^2}\] Wartością \(\varepsilon_r\) dla wybranych
+                        substancji zestawiono w tabeli Tab. Względne
+                        przenikalności elektryczne
+                    </p>
+
+                    <table>
+                        <tr>
+                            <th>ośrodek</th>
+                            <th>\(\varepsilon_r \)</th>
+                        </tr>
+                        <tr>
+                            <td>próżnia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>powietrze</td>
+                            <td>1,0006</td>
+                        </tr>
+                        <tr>
+                            <td>parafina</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>szkło</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>woda</td>
+                            <td>81</td>
+                        </tr>
+                    </table>
+                </section>
+                <section class="slide level1">
+                    <h3>Prawo, zasada, twierdzenie</h3>
+                    <p>
+                        Gdy mamu do czynienia z kilkoma naładowanymi ciałami,
+                        siłę wypadkową, analogicznie jak w przypadku siły
+                        grawitacyjnej, obliczamy dodająć wektorowo poszczególne
+                        siły 2-ciałowe.
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Przykład</h3>
+                    <p>
+                        Dipol elektryczny składa się z dwóch ładunków +Q i -Q
+                        oddalonych od siebie i l. Obliczmy siłę jaka jest
+                        wywierana na dodatni ładunek q umieszczony na
+                        symetralnej dipola.<br />
+                        <img src="images/w1_2.png" />
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Pole elektryczne</h3>
+                    <p>Centralne pole elektrostatyczne wokół ładunków.</p>
+
+                    <div class="blok">
+                        <div>
+                            dodatniego "+"<br />
+                            <img src="images/w1_3_dod.png" />
+                        </div>
+                        <div>
+                            ujemnego "-"<br />
+                            <img src="images/w1_3_uje.png" alt="" />
+                        </div>
+                    </div>
+                </section>
+                <section class="slide level1">
+                    <h3>Linie sił (linie pola)</h3>
+                    <p>
+                        Jeżeli źródłem pola jest ładunek punktowy, to linie
+                        rozchodzą się
+                        <b>promieniście</b>, sa one
+                        <b>zwrócone do ładunku dodatniego</b>. W przypadku
+                        <b>ładunku ujemnego są zwrócone do niego</b>. Zatem
+                        linie zaczynają się na ładunkach dodatnich, a kończa się
+                        na ujemnych.
+                    </p>
+
+                    <div class="blok">
+                        <div><img src="images/w1_4_dod.png" alt="" /></div>
+                        <div><img src="images/w1_4_uje.png" alt="" /></div>
+                    </div>
+                </section>
+                <section class="slide level1">
+                    <h3>Pole elektryczne</h3>
+                    <p>
+                        Jest to pole wektorowe. Pole elektryczne jest to
+                        <b
+                            >przestrzeń, w której na ciała majace ładunek
+                            działają siły.</b
+                        ><br />
+                        Ładunek q wytwarza pole elektryczne w otaczającej go
+                        przestrzeni.<br />
+                        Pole wytworzone przez ten łądunek działa na \(q_\alpha
+                        \). Przejawia się to jak siła F, której działania
+                        doznaje ten ładunek.<br />
+                        <img src="images/w1_5.png" alt="" /><br />
+                        Pole elektryczne odgrywa rolę pośrednika w przenoszeniu
+                        oddziaływań pomiędzy ładunkami: \(\text{ładunek}
+                        \leftrightarrow \text{pole} \leftrightarrow
+                        \text{ładunek}\) Polem elektrczynym jest nazywana
+                        właściwość przestrzeni sprawiająca, że na umieszczone w
+                        niej naładowane ciało działa siła, która zależy od
+                        ładunku zgromadzonego w ciele oraz natężenia pola w
+                        miejscu położenia ciała. Pole elektryczne występuje w
+                        otoczeniu ciała naładowanego, które jest źródłem pola.
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Natężenie pola elektrycznego</h3>
+                    <p>
+                        Definiujemy natężenie pola elektrycznego jako siłę
+                        działającą na ładunek q(umieszczony w danym punkcie
+                        przestrzeni) podzieloną przez ten ładunek.<br />
+
+                        Tak więc, żeby zmierzyć natężenie pola elektrycznego E w
+                        dowolnym punkcie przestrzeni, należy w tym punkcie
+                        umieścić ładunek próbny(ładunek jednostkowy) i zmierzyć
+                        wypadkową siłę elektrczyną F działającą na ten ładunek.
+                        Należy upewnić się czy obecność ładunku próbnego nie
+                        zmienia położeń innych ładunków<br />
+
+                        \(E=\frac{\vec{F}}{q_0}\)<br />
+                        Przyjęto konwencje, że
+                        <span style="font-size: 25px"
+                            >ładunek próbny jest dodatni</span
+                        >, więc kierunek wektora E taki sam jak ładunek
+                        działającej na ładunek dodatni. Jeżeli pole elektryczne
+                        jest wytworzone przez łądunek punktowy Q to zgodnie z
+                        prawem Coulomba siła działająca na ładunek próbny q w
+                        odległości r od tego ładunku wynosi:
+                        \[\vec{F}(\vec{r})=\frac{1}{4\pi\varepsilon_0}\frac{Qq}{|\vec{r}|^3}\vec{r}\]
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Natężenie pola elektrycznego cd.</h3>
+                    <p>
+                        Ładunek próbny nie może zaburzać pole, czyli musi być
+                        znacznie mniejszy od ładunku wytwarzającego pole. Jest
+                        porządane, by \(q_0 \rightarrow 0\), przy czym nawet
+                        elementarny ładunek elektronu (\(1,6*10^{-19} \
+                        \text{C}\)) byłby zbyt duże w przypadku podobnie małego
+                        ładunku źródłowego.<br />
+
+                        Jednostką natężenia pola jest
+                        \(\frac{\text{N}}{\text{C}}\). Ponieważ \(q_0\) jest
+                        wielkością skalarną, zaś F = wektorem, E jest wektorem
+                        skierowanym zgodnie z F. można uzyskać bardziej
+                        praktyczną zależność: \[E=k\frac{q}{r^2}\] która okresla
+                        natężenie pola w odległości r od ładunku q
+                        wytwarzającego to pole.
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Zestawienie wzorów</h3>
+                    <p>
+                        \[\displaystyle{ \begin{array}{1}
+                        \vec{E}=\frac{\vec{F}}{q} \\
+                        \vec{E}(\vec{r})=\frac{1}{4\pi\varepsilon_0}\frac{Q}{ |
+                        \vec{r} | ^3}\vec{r} \\
+                        E(\vec{r})=\frac{1}{4\pi\varepsilon_0}\frac{Q}{r^2} \\
+                        \vec{F}(\vec{r})=\frac{1}{4\pi\varepsilon_0}\frac{Qq}{|\vec{r}|^3}\vec{r}
+                        \end{array} }\]
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Linie sił (lini pola)</h3>
+                    <p>
+                        Linie pola pozwalają na poglądowe przedstawienie pola.
+                        Linia pola to linia, do której wektor natężenia pola
+                        jest styczny w każdym jej punkcie. Ma ona zwrot zgodny
+                        ze zwrotem wektora natężenia.<br />
+                        <img src="images/w1_6.png" alt="" /><br />
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Linie sił (lini pola) - zależności</h3>
+                    Zależność pomiędzy liniami sił a wektorem natężenia pola
+                    elektrycznego jest następująca:
+                    <ul>
+                        <li>
+                            <span style="color: red">Styczna</span> do linii sił
+                            w dowolnym punkcie
+                            <span style="color: red">wyznacza kierunek E</span>
+                            w tym punkcie.
+                        </li>
+                        <li>
+                            Linie sił wykreśla się tak, że
+                            <span style="color: red">liczba linii</span> na
+                            jednostkę powierzchni przekroju
+                            <span style="color: red"
+                                >jest wprost proporcjonalna do wielkości E</span
+                            >. Gdy linie leżą blisko siebie, E jest duże, a gdy
+                            są odległe, E jest małe.
+                        </li>
+                    </ul>
+                    <div class="blok">
+                        <div><img src="images/w1_7_dod.png" alt="" /></div>
+                        <div><img src="images/w1_7_uje.png" alt="" /></div>
+                    </div>
+                </section>
+                <section class="slide level1">
+                    <h3>Strumień pola elektrycznego</h3>
+                    <p>
+                        Strumień \(\varPhi\) pola elektrycznego przez
+                        powierzchnię S definiujemy jako iloczyn skalarny wektora
+                        powierzchni S i natężenia pola elektrycznego E
+                    </p>
+                    <div class="blok">
+                        <div>
+                            \[\varPhi=E*S=ES\cos\alpha\]
+                            <img src="images/w1_8_1.png" alt="" />
+                        </div>
+                        <div>
+                            \[\text{d}\varPhi=E*\text{d}S\cos\alpha\]
+                            <img src="images/w1_8_2.png" alt="" />
+                        </div>
+                    </div>
+                </section>
+                <section class="slide level1">
+                    <h3>Strumień pola elektrycznego cd.</h3>
+                    <p>
+                        Strumień \(\varPhi\) natężenia pola elektrycznego
+                        \(\vec{E}\), przenikający przez zamknięta powierzchnię
+                        S, ograniczającą obszar o objętości V jest
+                        proporcjonalny do ładunku elektrycznego Q zawartego w
+                        tym obszarze(objętości). \[\varPhi=\int_{S}\vec{E} \
+                        d\vec{S}=\frac{1}{\varepsilon_0}\int_{V}\rho \
+                        dV=\frac{Q}{\varepsilon_0}\] przy czym:
+                    </p>
+
+                    <ul>
+                        <li>wektor \(d\vec{S}\) jest wektorem powierzchni</li>
+                        <li>
+                            współczynnikiem proporcjonalności jest przenikliwość
+                            elektryczna próżni \(\varepsilon_0\)
+                        </li>
+                    </ul>
+                    <h4>W ujęciu różniczkowym</h4>
+                    <p>
+                        Dywergencja natężenia pola elektrycznego równa jest
+                        ilorazowi gęstości ładunku i przenikalności elektrycznej
+                        próżni: \[\bigtriangledown
+                        \vec{E}=\frac{\rho}{\varepsilon_0}\] przy czym:
+                    </p>
+                    <ul>
+                        <li>
+                            \(\bigtriangledown \ \vec{E}\) - dywergencja
+                            natężenia pola elektrycznego
+                        </li>
+                        <li>\(\rho\) - gęstość ładunku</li>
+                    </ul>
+                </section>
+                <section class="slide level1">
+                    <h3>
+                        Potencjał elektryczny. Energia potencjalna w polu
+                        elektrycznym
+                    </h3>
+                    <p>
+                        Różnica energii potencjalnej \(E_p\) pomiędzy punktami A
+                        i B jest równa pracy(ze znakiem minus) wykonanej przez
+                        siłę zachowawczą przy przemieszczaniu ciała od A do B
+                        \[E_{pB}-E_{pA}=W_{AB}=-\int^{B}_{A}Fdr\] Dla pola
+                        elektrycznego energia potencjalna wynosi:
+                        \[E_{pB}-E_{pA}=-W_{AB}=-\int^{B}_{A}Fdr=-q\int^{B}_{A}Edr\]
+                        gdzie E jest natężeniem pola elektrycznego. Siły
+                        elektryczne są siłami zahcowaczymi i wartość pracy nie
+                        zależny od wyboru drogi pomiędzy punkami A i B. Jeżeli
+                        teraz podobnie jak dla grawitacyjnej energii
+                        potencjalnej przyjmiemy, że energia potencjalna pola
+                        elektrycznego jext równa zero w nieskończoności, to
+                        wówczas energia potencjalna w danym punkcie r pola
+                        elektrycznego jest dana wzorem:
+                        \[E_p(r)=-q\int^{r}_{x}Edr\]
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Potencjał i napięcie elektryczne</h3>
+                    <p>
+                        Praca W, która jest potrzebna, by przesunąć ładunek
+                        próbny \(q_0\) z nieskończoności do określonego punktu w
+                        polu elektrycznym wytwarzanym przez ładunek q, okresla
+                        potencjał \[U=\frac{W}{q_0}\] czyli wielkość skalarną,
+                        której jednostką jest wolt (V), tożsamy z ilorazem
+                        dżulai kulomba (\(\frac{J}{C}\)) Przyjmując inny punkt
+                        widzenia, można rozpatrywać przemiesczenie ładunku
+                        próbnego między dwoma punktami pola elektrycznego
+                        wytwarzanego przez ładunek q. Wtedy interesująca staje
+                        się róznica potencjałów w wytwarzanych punktach, czyli
+                        napięcie elektryczne U. Ponieważ praca jest równa sile
+                        pomnozonej przez przemieszczenie, łatwo można wykazać,
+                        że wyrażenie: \[U=k\frac{q}{r}\] określa napięcie między
+                        środkiem ładunku q a punktem odległym od niego o r.<br />
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Potencjał i napięcie elektryczne cd.</h3>
+                    <p>
+                        Biorąc pierwszą pochodną z równania można wyprowadzić
+                        następujący związek: \[E=-\frac{\text{d}U}{\text{d}r}\]
+                        z którego wynika, że natężenie pola elektrycznego jest
+                        tożsame z gradientem potencjału i można mierzyć w
+                        \(\frac{V}{m}\). Znak minus oznacza, że E jest
+                        skierowane przeciwnie do
+                        \(\frac{\text{d}U}{\text{d}r}\). \[U=\int^{b}_{a} \
+                        dU=-\int^{b}_{a}E \ dr=U_b-U_a\] gdzie a i b oznaczją
+                        punkty pola odległe o r, a \(U_a\) i \(U_b\) -
+                        potencjały w tych punktach. Jeżeli a leży w
+                        nieskończoności, czyli \(U_a = 0 \text{V}\), co wynika z
+                        podstawienia \(r \rightarrow \infty\) \[U =
+                        \int^{b}_{a}\ Edr=U_b\] W przypadku pola jednostkowego
+                        \(U = Er\), czyli \(E = \frac{U}{r}\).
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Potencjał elektryczny</h3>
+                    <p>
+                        Do opisu pola elektrycznego lepiej posługiwać się
+                        energią potencjalną przypadającą na jednostkowy ładunek,
+                        czyli potencjałem elektrycznym.<br />
+                        Potencjał elektryczny definiujemy jako energię
+                        potencjalną pola elektrycznego pomnozoną przez
+                        jednostkowy ładunek.
+                        \[V(r)=\frac{E_p(r)}{q}=\frac{W}{q}\]
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Potencjał elektryczny - Jednostki</h3>
+                    <p>
+                        Jednostką potencjału elektrycznego jest wolt(V), 1 V =
+                        \(1 \frac{J}{C}\).<br />
+                        Potencjał pola ładunku punktowego Q możemy otrzymać
+                        dzieląć równanie przez q \[V(r)=k\frac{Q}{r}\]
+                        Oblicznony potencjał okresla pracę potrzebną do
+                        przeniesienia jednostkowego ładunku z nieskończoności na
+                        odległość r od ładunku Q. Potencjał charakteryzuje pole
+                        elektryczne, a nie zalezy od umieszczonego w nim
+                        ładunku.<br />
+                        Często w fizyce posługujemy się pojęciem różnicy
+                        potencjałów, czyli napięciem (oznaczanym U). Różnica
+                        potencjałów między dwoma punktami A i B jest równa pracy
+                        potrzebnej do przeniesienia w polu elektrycznym ładunku
+                        jednostkowego(próbnego) q pomiędzy tymi punktami.
+                        Wyrażenie na różnicę potencjałów otrzymamy bezpośrednio
+                        ze wzoru dzieląć to równanie obustronnnie przez q
+                        \[V_b-V_a=U=-\frac{W_{AB}}{q}=-\int^{B}_{A} \ Edr\] Znak
+                        minus odzwierciedla fakt, że potencjał maleje w kierunku
+                        wektora E.<br />
+                        Podobnie jak natężenie pola elektrycznego, które
+                        ilustrowaliśmy za pomocą linii sił pola.
+                    </p>
+                </section>
+                <section class="slide level1">
+                    <h3>Praca w polu elektrycznym</h3>
+                    \[W(A \rightarrow B) = -\int^{B}_{A} \ q\vec{E}d\vec{l}
+                    \rightarrow \text{Praca, niezależna od drogi AB}\]
+                    \[W_p(B)=W_p(A)+W(A\rightarrow B) \rightarrow \text{energia
+                    potencjalna}\]
+                    \[W_F(B)=W_p(A)+(-q\int^{B}_{A}\vec{E}d\vec{l})\]
+                    \[\frac{W_p}{+q_0}=\varphi ,\
+                    \varphi(B)=\varphi(A)-\int^{B}_{A}\vec{E}d\vec{l}
+                    \rightarrow \text{potencjał elektryczny, powierzchnie
+                    ekwipotencjalne}\]
+                </section>
             </div>
-            <div>
-                ujemnego "-"<br>
-                <img src="images/w1_3_uje.png" alt="">
-            </div>
         </div>
-    </p>
-    <h3>Linie sił (linie pola)</h3>
-    <p>
-        Jeżeli źródłem pola jest ładunek punktowy, to linie rozchodzą się <b>promieniście</b>, sa one <b>zwrócone do ładunku dodatniego</b>. W przypadku <b>ładunku ujemnego są zwrócone do niego</b>. Zatem linie zaczynają się na ładunkach dodatnich, a kończa się na ujemnych.
-        <div class="blok">
-            <div><img src="images/w1_4_dod.png" alt=""></div>
-            <div><img src="images/w1_4_uje.png" alt=""></div>
-        </div>
-    </p>
-    <h3>Pole elektryczne</h3>
-    <p>
-        Jest to pole wektorowe. Pole elektryczne jest to <b>przestrzeń, w której na ciała majace ładunek działają siły.</b><br>
-        Ładunek q wytwarza pole elektryczne w otaczającej go przestrzeni.<br>
-        Pole wytworzone przez ten łądunek działa na \(q_\alpha \). Przejawia się to jak siła F, której działania doznaje ten ładunek.<br>
-        <img src="images/w1_5.png" alt=""><br>
-        Pole elektryczne odgrywa rolę pośrednika w przenoszeniu oddziaływań pomiędzy ładunkami:
-        \(\text{ładunek} \leftrightarrow \text{pole} \leftrightarrow \text{ładunek}\) 
-
-        Polem elektrczynym jest nazywana właściwość przestrzeni sprawiająca, że na umieszczone w niej naładowane ciało działa siła, która zależy od ładunku zgromadzonego w ciele oraz natężenia pola w miejscu położenia ciała. Pole elektryczne występuje w otoczeniu ciała naładowanego, które jest źródłem pola.
-    </p>
-    <h3>Natężenie pola elektrycznego</h3>
-    <p>
-        Definiujemy natężenie pola elektrycznego jako siłę działającą na ładunek q(umieszczony w danym punkcie przestrzeni) podzieloną przez ten ładunek.<br>
-
-        Tak więc, żeby zmierzyć natężenie pola elektrycznego E w dowolnym punkcie przestrzeni, należy w tym punkcie umieścić ładunek próbny(ładunek jednostkowy) i zmierzyć wypadkową siłę elektrczyną F działającą na ten ładunek. Należy upewnić się czy obecność ładunku próbnego nie zmienia położeń innych ładunków<br>
-
-        \(E=\frac{\vec{F}}{q_0}\)<br>
-        Przyjęto konwencje, że <span style="font-size:25px;">ładunek próbny jest dodatni</span>, więc kierunek wektora E taki sam jak ładunek działającej na ładunek dodatni. Jeżeli pole elektryczne jest wytworzone przez łądunek punktowy Q to zgodnie z prawem Coulomba siła działająca na ładunek próbny q w odległości r od tego ładunku wynosi:
-        \[\vec{F}(\vec{r})=\frac{1}{4\pi\varepsilon_0}\frac{Qq}{|\vec{r}|^3}\vec{r}\]
-    </p>
-    <h3>Natężenie pola elektrycznego cd.</h3>
-    <p>
-        Ładunek próbny nie może zaburzać pole, czyli musi być znacznie mniejszy od ładunku wytwarzającego pole. Jest porządane, by \(q_0 \rightarrow 0\), przy czym nawet elementarny ładunek elektronu (\(1,6*10^{-19} \ \text{C}\)) byłby zbyt duże w przypadku podobnie małego ładunku źródłowego.<br>
-
-        Jednostką natężenia pola jest \(\frac{\text{N}}{\text{C}}\). Ponieważ \(q_0\) jest wielkością skalarną, zaś F = wektorem, E jest wektorem skierowanym zgodnie z F.
-        można uzyskać bardziej praktyczną zależność:
-        \[E=k\frac{q}{r^2}\]
-        która okresla natężenie pola w odległości r od ładunku q wytwarzającego to pole.
-    </p>
-    <h3>Zestawienie wzorów</h3>
-    <p>
-        \[\displaystyle{ \begin{array}{1}
-        \vec{E}=\frac{\vec{F}}{q} \\
-        \vec{E}(\vec{r})=\frac{1}{4\pi\varepsilon_0}\frac{Q}{ | \vec{r} | ^3}\vec{r} \\
-        E(\vec{r})=\frac{1}{4\pi\varepsilon_0}\frac{Q}{r^2} \\
-        \vec{F}(\vec{r})=\frac{1}{4\pi\varepsilon_0}\frac{Qq}{|\vec{r}|^3}\vec{r}
-        \end{array}
-        }\]
-    </p>
-    <h3>Linie sił (lini pola)</h3>
-    <p>
-        Linie pola pozwalają na poglądowe przedstawienie pola. Linia pola to linia, do której wektor natężenia pola jest styczny w każdym jej punkcie. Ma ona zwrot zgodny ze zwrotem wektora natężenia.<br>
-        <img src="images/w1_6.png" alt=""><br>
-        Zależność pomiędzy liniami sił a awektorem natężenia pola elektrycznego jest następująca:
-        <ul>
-            <li>
-                <span style="color:red">Styczna</span> do linii sił w dowolnym punkcie <span style="color:red">wyznacza kierunek E</span> w tym punkcie.
-            </li>
-            <li>
-                Linie sił wykreśla się tak, że <span style="color:red">liczba linii</span> na jednostkę powierzchni przekroju <span style="color:red">jest wprost proporcjonalna do wielkości E</span>. Gdy linie leżą blisko siebie, E jest duże, a gdy są odległe, E jest małe.
-            </li>
-        </ul>
-        <div class="blok">
-            <div><img src="images/w1_7_dod.png" alt=""></div>
-            <div><img src="images/w1_7_uje.png" alt=""></div>
-        </div>
-    </p>
-    <h3>Strumień pola elektrycznego</h3>
-    <p>
-        Strumień \(\varPhi\) pola elektrycznego przez powierzchnię S definiujemy jako iloczyn skalarny wektora powierzchni S i natężenia pola elektrycznego E
-        \[\varPhi=E*S=ES\cos\alpha\]
-        <img src="images/w1_8_1.png" alt=""><br>
-        \[\text{d}\varPhi=E*\text{d}S\cos\alpha\]
-        <img src="images/w1_8_2.png" alt="">
-    </p>
-    <h3>Strumień pola elektrycznego cd.</h3>
-    <p>
-        Strumień \(\varPhi\) natężenia pola elektrycznego \(\vec{E}\), przenikający przez zamknięta powierzchnię S, ograniczającą obszar o objętości V jest proporcjonalny do ładunku elektrycznego Q zawartego w tym obszarze(objętości).
-        \[\varPhi=\int_{S}\vec{E} \ d\vec{S}=\frac{1}{\varepsilon_0}\int_{V}\rho \ dV=\frac{Q}{\varepsilon_0}\]
-        przy czym:
-        <ul>
-            <li>wektor \(d\vec{S}\) jest wektorem powierzchni</li>
-            <li>współczynnikiem proporcjonalności jest przenikliwość elektryczna próżni \(\varepsilon_0\)</li>
-        </ul>
-        <h4>W ujęciu różniczkowym</h4>
-        Dywergencja natężenia pola elektrycznego równa jest ilorazowi gęstości ładunku i przenikalności elektrycznej próżni:
-        \[\bigtriangledown \ \vec{E}=\frac{\rho}{\varepsilon_0}\]
-        przy czym:
-        <ul>
-            <li>\(\bigtriangledown \ \vec{E}\) - dywergencja natężenia pola elektrycznego</li>
-            <li>\(\rho\) - gęstość ładunku</li>
-        </ul>
-    </p>
-    <h3>Potencjał elektryczny. Energia potencjalna w polu elektrycznym</h3>
-    <p>
-        Różnica energii potencjalnej \(E_p\) pomiędzy punktami A i B jest równa pracy(ze znakiem minus) wykonanej przez siłę zachowawczą przy przemieszczaniu ciała od A do B
-        \[E_{pB}-E_{pA}=W_{AB}=-\int^{B}_{A}Fdr\]
-        Dla pola elektrycznego energia potencjalna wynosi:
-        \[E_{pB}-E_{pA}=-W_{AB}=-\int^{B}_{A}Fdr=-q\int^{B}_{A}Edr\]
-        gdzie E jest natężeniem pola elektrycznego. Siły elektryczne są siłami zahcowaczymi i wartość pracy nie zależny od wyboru drogi pomiędzy punkami A i B. Jeżeli teraz podobnie jak dla grawitacyjnej energii potencjalnej przyjmiemy, że energia potencjalna pola elektrycznego jext równa zero w nieskończoności, to wówczas energia potencjalna w danym punkcie r pola elektrycznego jest dana wzorem:
-        \[E_p(r)=-q\int^{r}_{x}Edr\]
-    </p>
-    <h3>Potencjał i napięcie elektryczne</h3>
-    <p>
-        Praca W, która jest potrzebna, by przesunąć ładunek próbny \(q_0\) z nieskończoności do określonego punktu w polu elektrycznym wytwarzanym przez ładunek q, okresla potencjał
-        \[U=\frac{W}{q_0}\]
-        czyli wielkość skalarną, której jednostką jest wolt (V), tożsamy z ilorazem dżulai kulomba (\(\frac{J}{C}\))
-        Przyjmując inny punkt widzenia, można rozpatrywać przemiesczenie ładunku próbnego między dwoma punktami pola elektrycznego wytwarzanego przez ładunek q. Wtedy interesująca staje się róznica potencjałów w wytwarzanych punktach, czyli napięcie elektryczne U.
-        Ponieważ praca jest równa sile pomnozonej przez przemieszczenie, łatwo można wykazać, że wyrażenie:
-        \[U=k\frac{q}{r}\]
-        określa napięcie między środkiem ładunku q a punktem odległym od niego o r.<br>
-        Biorąc pierwszą pochodną z równania można wyprowadzić następujący związek:
-        \[E=-\frac{\text{d}U}{\text{d}r}\]
-        z którego wynika, że natężenie pola elektrycznego jest tożsame z gradientem potencjału i można mierzyć w \(\frac{V}{m}\). Znak minus oznacza, że E jest skierowane przeciwnie do \(\frac{\text{d}U}{\text{d}r}\).
-        \[U=\int^{b}_{a} \ dU=-\int^{b}_{a}E \ dr=U_b-U_a\]
-        gdzie a i b oznaczją punkty pola odległe o r, a \(U_a\) i \(U_b\) - potencjały w tych punktach. Jeżeli a leży w nieskończoności, czyli \(U_a = 0 \text{V}\), co wynika z podstawienia \(r \rightarrow \infty\)
-        \[U = \int^{b}_{a}\ Edr=U_b\]
-        W przypadku pola jednostkowego \(U = Er\), czyli \(E = \frac{U}{r}\).
-    </p>
-    <h3>Potencjał elektryczny</h3>
-    <p>
-        Do opisu pola elektrycznego lepiej posługiwać się energią potencjalną przypadającą na jednostkowy ładunek, czyli potencjałem elektrycznym.<br>
-        Potencjał elektryczny definiujemy jako energię potencjalną pola elektrycznego pomnozoną przez jednostkowy ładunek.
-        \[V(r)=\frac{E_p(r)}{q}=\frac{W}{q}\]
-        <h5>Jednostki</h5>
-        Jednostką potencjału elektrycznego jest wolt(V), 1 V = \(1 \frac{J}{C}\).<br>
-        Potencjał pola ładunku punktowego Q możemy otrzymać dzieląć równanie przez q
-        \[V(r)=k\frac{Q}{r}\]
-        Oblicznony potencjał okresla pracę potrzebną do przeniesienia jednostkowego ładunku z nieskończoności na odległość r od ładunku Q. Potencjał charakteryzuje pole elektryczne, a nie zalezy od umieszczonego w nim ładunku.<br>
-        Często w fizyce posługujemy się pojęciem różnicy potencjałów, czyli napięciem (oznaczanym U). Różnica potencjałów między dwoma punktami A i B jest równa pracy potrzebnej do przeniesienia w polu elektrycznym ładunku jednostkowego(próbnego) q pomiędzy tymi punktami. Wyrażenie na różnicę potencjałów otrzymamy bezpośrednio ze wzoru dzieląć to równanie obustronnnie przez q
-        \[V_b-V_a=U=-\frac{W_{AB}}{q}=-\int^{B}_{A} \ Edr\]
-        Znak minus odzwierciedla fakt, że potencjał maleje w kierunku wektora E.<br>
-        Podobnie jak natężenie pola elektrycznego, które ilustrowaliśmy za pomocą linii sił pola.
-    </p>
-    <h3>Praca w polu elektrycznym</h3>
-    \[W(A \rightarrow B) = -\int^{B}_{A} \ q\vec{E}d\vec{l} \rightarrow \text{Praca, niezależna od drogi AB}\]
-    \[W_p(B)=W_p(A)+W(A\rightarrow B) \rightarrow \text{energia potencjalna}\]
-    \[W_F(B)=W_p(A)+(-q\int^{B}_{A}\vec{E}d\vec{l})\]
-    \[\frac{W_p}{+q_0}=\varphi ,\  \varphi(B)=\varphi(A)-\int^{B}_{A}\vec{E}d\vec{l} \rightarrow \text{potencjał elektryczny, powierzchnie ekwipotencjalne}\]
-</body>
+        <script src="reveal.js"></script>
+        <!-- reveal.js plugins -->
+        <script src="notes.js"></script>
+        <script src="search.js"></script>
+        <script src="zoom.js"></script>
+        <script src="some.js"></script>
+    </body>
 </html>
