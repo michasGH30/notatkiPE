@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+		<title>Podstawy Elektroniki - Wykład 5</title>
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" href="reveal.css" />
+		<link rel="stylesheet" href="some.css" />
+		<link rel="stylesheet" href="black.css" id="theme" />
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="title-slide">
+					<h1 class="title">Podstawy Elektroniki - Wykład 5</h1>
+				</section>
+				<section class="slide level1">
+					<h3>Przykład</h3>
+					<p>
+						Jaki charakter ma obwód z rys.(którego nie ma lol): indukcyjny, pojemnościowy czy rezystancyjny? Wyznaczyć \(u(t)\).
+						Dane są: \(L\) = 50 mH, \(C\) = 3 mF, \(R = 20 \ \Omega\) oraz \(i(t) = 5\sin(100t) \ A\)
+					</p>
+					<h5>Rozwiązanie</h5>
+					<p>
+						Obwód jest indukcyjny, ponieważ: \[\omega L = 100 * 50 * 10^{-3} = 5 \ [\Omega] > \frac{1}{\omega C} =
+						\frac{1}{10*3*10^{-3}} = 3,33 \ [\Omega]\] Wykorzystując równanie uzyskujemy \[|Z| = \sqrt{20^2 + (5-3,33)^2} =
+						\sqrt{400 + 2,78} = 20,07 \ \Omega\] \[\varphi = \arctan(\frac{5-3,33}{20}) \approx 5^{\circ}\] Znając impedancję i
+						wiedząc, że \(I_m\) = 5 A, możemy wykorzystać wzór(jakiś lol) do określenia napięcia \[u(t) = 5*20,07*\sin(100t +
+						5^{\circ}) = 100,35*\sin(100t + 5^{\circ}) [V]\]
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>impedancja</h3>
+					<p>
+						Łączne oddziaływanie kondesatora i ceewki można opisywać wypadkową reaktancją ich połączenia szeregowego, \(X = X_L
+						- X_C\). Natomiast związek między prądem a wypadkowym napięciem na zaciskach szeregowego połączenia \(RLC\) można
+						zwięźle reprezentować impedancją, którą określają moduł i kąt: \[|Z| = \sqrt{R^2 + X^2}\] \[\varphi =
+						\arctan(\frac{X}{R})\] ale częściej jest przedstawiana jako liczba zepolona.
+					</p>
+					<p>
+						Zatem impedancja jest wielkością wektorową, która stanowi połączenie rezystancji i reaktancji. o module mierzonym w
+						\(\Omega\).
+					</p>
+					<p>
+						Impedancję można postrzegać jako abstrakcyjny element sieci, który zastępuje połączenie \(RLC\), tak jak pokazana na
+						rys.(ciekawe jakim). Impedancja pozwala wyrazić wypadkowe napięcie w następujący sposób: \[u(t) = |Z|I_m\sin(\omega
+						t + \theta_i + \arctan(\frac{X}{R}))\] czyli jest ono przebiegiem sinusoidalnym o amplitudzie \(U_m = |Z|I_m\) i
+						kącie fazowym (\(\theta_i + \arctan(\frac{X}{R})\)). Moduł impedancji określa związek między wartościami szczytowymi
+						prądu i napięcia.
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Impedancja cd.</h3>
+					<p>
+						W rezultacie \[u(t) = \sqrt{R^2 + (\omega L - \frac{1}{\omega C})^2}I_m\sin(\omega t + \theta_i + \varphi)\] inaczej
+						\[u(t) = \sqrt{{U_{Rm}}^2 + (U_{tm} - U_{Cm})^2}\sin(\omega t + \theta_i + \varphi) = U_m\sin(\omega t + \theta_i +
+						\varphi)\] gdzie \(\varphi = \arctan(\frac{\omega L - \frac{1}{coś}}{R})\) określa przesunięcie faozwe między
+						\(i(t)\) a \(u(t)\).
+					</p>
+					<p>
+						Jeżeli \(\varphi > 0\), czyli \(u(t)\) wyprzedza \(i(t)\) o \(\varphi\), to obwód ma charakter indukcyjny, gdyż
+						\(\omega L > \frac{1}{\omega C}\), czyli \(X_L > X_C\).
+					</p>
+					<p>
+						Jeżeli \(\varphi < 0\), czyli \(u(t)\) opóźnia się względem \(i(t)\) o \(\varphi\), to obwód ma charakter
+						pojemnościowy, gdyż \(\omega L < \frac{1}{\omega C}\), czyli \(X_L < X_C\).
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Obwody RLC prądu zmiennego</h3>
+					<p>
+						Po zbadaniu pojedyńczych elementów rozpatrzymy połączenie szeregowe, a następnie równoległe, opornika o rezystancji
+						\(R\), cewki o indukcyjności \(L\) i kondesatora o pojemności \(C\). W przypadku połączenia szeregowego interesują
+						nas związki między wspólnym prądem a napięciami występującymi na poszczególnych elementach. W Przypadku połączenia
+						równoległego ciekawe są natomiast związki między wspólnym napięciem a natężeniami prądów płynących przez
+						poszczególne elementy.
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Szeregowe połączenie RLC i pojęcie impedancji</h3>
+					<p>
+						Załóżmy, że sinusoidalne napięcie \(u(t)\) zostało doprowadzona do szeregowego połączenia \(RLC\), tak jak na
+						rys.(pewnie tym obok) i powoduje, że przez elementy płynie prąd \(i(t) = I_m\sin(\omega t + \theta_i)\). Zgodnie z
+						prawem Ohma występują na nich spadki napięcia: \[u_R(t) = RI_m\sin(\omega t + \theta_i) = U_{Rm}\sin(\omega t +
+						\theta_i)\] \[u_C(t) = -\frac{1}{\omega t}I_m\cos(\omega t + \theta_i) = U_{Cm}\cos(\omega t + \theta_i)\] \[u_L(t)
+						= \omega LI_m\cos(\omega t + \theta_i) = U_{Lm}\cos(\omega t + \theta_i)\] których suma na mocy praca Kirchhoffa,
+						jest równa napięciu wypadkowemu: \[u(t) = u_R(t) + u_L(t) + u_C(t)\] czyli \[u(t) =RI_m\sin(\omega t + \theta_i) +
+						(\omega L - \frac{1}{\omega C})I_m\cos(\omega t + \theta_i)\] albo \[u(t) = U_{Rm}\sin(\omega t + \theta_i) +
+						(U_{Lm} - U_{Cm})\cos(\omega t + \theta_i)\]
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Cewki w obwodach prądu sinusoidalnego</h3>
+					Jak wyjaśniona wczesniej, w obwodzie prądu stałego idealna cewka zachowuje się tak, jakby w jej miejscu było zwarcie,
+					połączenie o zerowej rezystancji, na którym nie ma spadku napięcia. W obwodzie prądu zmiennego element ten działa
+					inaczej, tak że może na nim występoweać napięcie.<br />
+					Jeżeli prąd \(i_L(t) = I_m\sin(\omega t + \theta_i)\) przepływa przez cewkę o indukcyjności \(L\), to element wytwarza
+					strumień magnetyczny i na jego zaciskach pojawia się indkuwana siła elektromotoryczna. Siłe tę można postrzegać jako
+					spadek napięcia \[u_L(t)=L\frac{di_l(t)}{dt} = \omega L I_m \cos(\omega t + \theta_i) = \omega L I_m \sin(\omega t +
+					\theta_i + \frac{\pi}{2})\] skierowany przeciwnie do prądu. Zatem w ogólnym równaniu: \[U_m = \omega LI_m\] \[\theta_w =
+					\theta_i + \frac{\pi}{2}\]
+				</section>
+				<section class="slide level1">
+					<h3>Cewki w obwodach prądu sinusoidalnego - cd.</h3>
+					Przeciwnie niż napięcie na kondesatorze, napięcie na cewce wyprzedza prąd o \(\frac{\pi}{2}\). Odpowiednia relację tych
+					przebiegów ilustruje rysunek na którym chuja widać.<br />
+					Podobnie jak kondesator, cewkę można scharakteryzować reaktancją. Iloczyn \(\omega L\) okresla reaktancję (opór bierny
+					indukcyjny) \[X_L = \omega L\] której jednostką jest \(\Omega\). Odwrotność \(X_L\) nosi nazwę
+					<span style="color: red">sus</span>ceptancji indukcyjnej \[B_L = \frac{1}{X_L} = \frac{1}{\omega L}\] i jest mierzona w
+					simensach [S].
+				</section>
+				<section class="slide level1">
+					<h3>Reaktancja a Rezystancja</h3>
+					Nie można utożsamiać reaktancji z rezystancją. Rezystancja określa faktyczną zdolnośc elementu do przewodzenia prądu, w
+					sensie przenoszenia ładunków. Ładunki w ogóle nie mogą przechodzić przez idealny kondensator, więc reaktancja jest tylko
+					miarą jego wpływu na prąd w gałęzi, do której został włączony. Reaktancja zalezy od częstotliwości źródła. natomiast
+					rezystancja - nie.<br />
+					Odwortność reaktancji \[B_C = \frac{1}{X_L} = \omega C\] jest nazywana susceptancją pojemnościową. Jej jednostką
+				</section>
+				<section class="slide level1">
+					<h3>Związek między napięciem a prądem kondensatora</h3>
+					<img src="images/wykres1.png" alt="" /><br />
+					Związek między napięciem a prądem kondensatora it wyprzedza napięcie ut
+				</section>
+				<section class="slide level1">
+					<h3>Natężenie i napięcie w kondensatorze</h3>
+					Zjawiskom tym towarzyszy ruch ładunków między elektrodami kondensatora a resztą obwodu, więc można przyjąć, że
+					zewnętrzny prąd o zmieniającym się natężeniu \(i_C(t)\) na rysunku chuj wie jakim nazywamy prądem pozornym, płynie także
+					przez \(C\).<br />
+					Natężenie pradu w obwodzie z kondensatorem o pojemności \(C\) obliczamy używając różniczkowej postaci tego równania,
+					czyli \[i_C(t) = \frac{dq_C}{dt} = C\frac{du_C}{dt}\] równanie okresla liniowy związek między prądem a szybkością zmian
+					napięcia.
+				</section>
+				<section class="slide level1">
+					<h3>Natężenie i napięcie w kondensatorze cd.</h3>
+					Jeżeli do zacisków kondensatora zostało doprowadzone napięcie \[u_C(t) = U_m\sin(\omega t + \theta_i)\] to \[i_C(t) =
+					\omega CU_m\cos(\omega t + \theta_i)\] czyli \[i_C(t) = \omega CU_m\sin(\omega t + \theta_i + \frac{\pi}{2})\] \[I_m =
+					\omega CU_m\] lub \[U_m = \frac{1}{\omega C}L\] i \[\theta_i = \theta_u + \frac{\pi}{2}\]
+				</section>
+				<section class="slide level1">
+					<h3>Natężenie i napięcie w kondensatorze cd.</h3>
+					Zatem w kondensatorze kąt fazowy prądu jest większy o \(\frac{\pi}{2}\) od kąta napięcia. Dlatego mówi się, że prąd
+					\(i_C(t)\) wyprzedza napięcie \(u_C(t)\) o \(\frac{\pi}{2}\) w fazie, czyli o \(\frac{1}{4}\) cyklu w czasie. Można tez
+					powiedzieć, że napięcie \(u_C(t)\) jest opóźnione względem prądu \(i_C(t)\) o \(\frac{\pi}{2}\).<br />
+					Amplituda napięcia \(U_m\) jest proprocjonalna do amplitudy \(I_m\) zgodnie z pramem Ohma. Współczynnik
+					proprocjonalności \(\frac{1}{\omega C}\) jest okreslony w omach [\(\Omega\)] i dlatego traktuje się go jako wielkośc
+					podobną do rezystancji, nazywaną reaktancją pojemnościową lub pojemnościowym oporem biernym: \[X_C = \frac{1}{\omega
+					C}\]
+				</section>
+				<section class="slide level1">
+					<h3>Kondensatory w obwodach prądu sinusoidalnego</h3>
+					Idealny kondensator(z doskonałym izolatorem) ze swojej natury nigdy bowiem nie pozwala na przepływ prądu, gdyż nie
+					istnieje ścieżka, którą łądunki mogłyby się przemieszczać. Mimo to w obwodzie prądu zmiennego element sprawia wrażenie
+					jakby był zdolny do przewodzenia.<br />
+					Kondensator, do którego doprowadzono napięcia sinusoidalne jest cyklicznie ładowany, a nastepnie rozładowywany. Zmiana
+					napięcia powoduje bowiem zmianę ładunku na elektrodach kondensatoram przy czym chwilowy zwrot napięcia decyduje o tym,
+					która okładka jest naładowana dodatnio, a która ujemnie, w danym momencie.
+				</section>
+				<section class="slide level1">
+					<h3>Rezystory w obwodach prądu sinusoidalnego</h3>
+					Załóżmy, że na zaciskach opornika o rezystancji \(R\) występuje sinusoidalne napięcie określane wzorem \[u(t) =
+					U_m\sin(\omega t + \theta)\] które może być wynikiem dołączenia źródła. Zgodnie z prawem Ohma \[i(t) = \frac{u(t)}{R} =
+					\frac{U_m}{R}\sin(\omega t + \theta)\] albo \[i(t) = I_m\sin(\omega t + \theta)\] gdzie \(I_m = \frac{U_m}{R}\)<br />
+					Zatem przebieg prądu w rezystorze różni się od przebiegu napięcia jedynie amplitudą(wartością maksymalną). Ponieważ
+					przesunięcie fazowe obydwu przebiegów są takie same, to mówi się, że napięcie i prąd rezystora są w fazie.
+				</section>
+				<section class="slide level1">
+					<h3>Prąd sinusoidalny ogólnie</h3>
+					<p>
+						Jeżeli źródła napięcia sinusoidalnego zostaną uzyte do zasilania liniowej sieci, to w jej gałęziach popłyną pady
+						sinusoidalnie zmienne o tej samej częstotliwości \(f = \frac{\omega}{2\pi}\), niezaleznie od struktury obwodu ani
+						parametrów elementów biernych, które wchodzą w jego skład. Typy i paramnetry elementów oraz sposób ich połączenia
+						decydują tylko o wartościach szczytowych i przesunięciach fazowych prądów i napięć w danym układzie.
+					</p>
+					<p>
+						Załóżmy, że w pewnej gałżeci płynie prad, którego wartości chwilowe opisuje ogólny wzór: \[i(t) = I_m\sin(\omega t +
+						\theta_i)\]
+					</p>
+					<p>
+						Przepływjąc przez element liniowy, taki prąd powoduje wystąpienie na nim spadku napięcia, który ma sinusoidalny
+						przebieg: \[u(t) = U_m\sin(\omega t + \theta_u)\] o amplitudzie i przesunięciu fazowym, które zależą od rodzaju
+						elementu oraz jego parametrów. Tylko w rezystorze takie samo przesunięcie fazowe charakteryzuje prąd i napięcie. W
+						kondensatorach i cewkach przebieg prądu jest przesunięty w fazie względem przebiegu napięcia.
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Przebiegi okresowe niesinusodalne</h3>
+					<p>
+						Przebiegi okresowe, których nie można opisać wzorem jakimś kurwa są nazywane niesinusodalnymi. Na podstawie teorii
+						szeregów Fouriera każdy przbieg niesinusodalny można przedstawić w postaci złożenia przbiegów sinusoidalnych.
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Pulsacja</h3>
+					<p>
+						Bardzo często używa się terminu <span class="pog">pulsacja</span>. Jest to częstotliwość pomnożona przez kąt pełny
+						\[\omega = 2\pi f = \frac{2\pi}{T}\]
+					</p>
+					<p>Jednostką pulsacji jest \(\frac{rad}{s}\).</p>
+					<p>Zapis funkcji sinusoidalnej wtedy bardziej zwięzły: \[i(t) = I_m\sin(\omega t + \alpha)\]</p>
+					<p>Inne nazwy: prędkość kątowa, częstość kołowa</p>
+				</section>
+				<section class="slide level1">
+					<h3>Częstotliwość</h3>
+					<p>Odwrotność okresu nazywamy <span class="pog">częstotliwością</span> \[f = \frac{1}{T}\]</p>
+					<p>Jednostką pulsacji jest Hz (herc.) \(\frac{1}{s}\).</p>
+					<p>Liczbowo częstotliwość jest równa ilości okresów w jednej sekundzie.</p>
+					<p>Na przykład, 50 Hz oznacza, że wszystkie wartości funkcji powtarzają sie kolejno 50 razy w ciągu sekundy</p>
+				</section>
+				<section class="slide level1">
+					<h3>Prąd sinusoidalny</h3>
+					<div class="blok">
+						<div>
+							<p>Najogólniejszy prąd sinusoidalny ma postać: \[i(t)=I_m\sin(2\pi \frac{1}{T} + \alpha)\]</p>
+							<p>
+								gdzie: <br />
+								\(i\) - wartość chwilowa <br />
+								\(I_m\) - wartość maksymalna (amplituda) <br />
+								\(T\) - okres <br />
+								\(\alpha\) - kąt fazowy
+							</p>
+							<p>Wartości \(i(t)\) zmieniają się w czasie sinusoidalnie.</p>
+							<p>Wartości \(i(t)\) powtarzają się po upływie okresu \(T\).</p>
+						</div>
+						<div><img src="images/w5_1.png" alt="" /></div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Przebiegi i sygnały okresowe</h3>
+					<p>
+						Przebieg lub sygnał \(u(t)\), który stanowi funkcję czasu, jest nazywany okresowym albo periodycznym, jeżeli
+						przyjmuje on wartości, które powtarzają się cyklicznie: \[u(t + nT) = u(t)\] gdzie \(n\) jest dowolną liczbą
+						całkowitą \(\pm \ 1, \pm \ 2, \pm \ 3, \dots\), zaś \(T\) oznacza okres przebiegu, czyli najkrótszy czas, po którym
+						następuje powtórzenie.
+					</p>
+					<p>
+						Odwrotność okresu \[f = \frac{1}{T}\] jest nazywana częstotliwością przebiegu. Jeżeli \(T\) jest określane w
+						sekundach, to odpowiada mu \(f\) w hercach [Hz].
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Przykłady sygnałów analogowych</h3>
+					<div class="blok">
+						<div>Liniowo narastające napięcie</div>
+						<div><img src="images/w5_2.png" alt="" /></div>
+					</div>
+					<div class="blok">
+						<div>Impuls(prostokątny)</div>
+						<div><img src="images/w5_3.png" alt="" /></div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Przykłady sygnałów analogowych cd</h3>
+					<div class="blok">
+						<div>Skok</div>
+						<div><img src="images/w5_4.png" alt="" /></div>
+					</div>
+					<div class="blok">
+						<div>Szpilka</div>
+						<div><img src="images/w5_5.png" alt="" /></div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Interpretacja graficzna parametrów sygnały impulsowego</h3>
+					<img src="images/w5_6.png" alt="" />
+				</section>
+				<section class="slide level1">
+					<h3>Sygnały</h3>
+					<img src="images/w5_7.png" alt="" />
+					<p>
+						Podstawowe parametry: <br />
+						Impulsy o polaryzacji dodatniej: (1), (2) <br />
+						Impulsy o polaryzacji ujemnej: (3), (4) <br />
+						Impulsy dodatnie: (1)(4) <br />
+						Impulsy ujemne: (2)(3)
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Czas narastania</h3>
+					<img src="images/w5_8.png" alt="" />
+				</section>
+				<section class="slide level1">
+					<h3>Sygnały harmoniczne (sinusoidalne)</h3>
+					<div class="blok">
+						<div>
+							<p>
+								\[u(t)=A\sin(\omega t + \varphi)\] lub \[u(t) = A\cos(\omega t + \varphi^{'})\] gdzie \(\varphi^{'} =
+								\varphi - \frac{\pi}{2}\) <br />
+								\(A\) - amplituda <br />
+								\(\omega t + \varphi\) - faza <br />
+								\(\omega\) - częstość (cześstość kołowa) \(\varphi\) - faza początkowa (przesunięcie fazowe) <br />
+								Częstotliwość: \(f = \frac{\omega}{2\pi}\) <br />
+								Okres: \(T = \frac{1}{f} = \frac{2\pi}{\omega}\)
+							</p>
+						</div>
+						<div>
+							<img src="images/w5_9.png" alt="" />
+							<p>
+								Zapis w postaci eksponencjalnej z wykorzystaniem liczb zespolonych: \[\cos|\omega t + \varphi| =
+								\frac{1}{2}|e^{coś} + e^{coś}|\] \[cos|\omega t + \varphi| = R|e^{coś}|\] \(j\) - jednostką urojona
+							</p>
+						</div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Przykłady sygnałów analogowych</h3>
+					<div class="blok">
+						<div>Przebieg sinusoidalny zmodulowany amplitudowo</div>
+						<div>
+							<img src="images/w5_10.png" alt="" />
+						</div>
+					</div>
+					<div class="blok">
+						<div>Przebieg sinusoidalny zmodulowany częstotliwościowo (FM)</div>
+						<div>
+							<img src="images/w5_11.png" alt="" />
+						</div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Przykłady sygnałów analogowych</h3>
+					<div class="blok">
+						<div>Sygnał harmoniczny <br />(sinusoidalny)</div>
+						<div>
+							<img src="images/w5_12.png" alt="" />
+						</div>
+					</div>
+					<div class="blok">
+						<div>Fala prostokątna</div>
+						<div>
+							<img src="images/w5_13.png" alt="" />
+						</div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Przykłady sygnałów analogowych</h3>
+					<div class="blok">
+						<div>Fala trójkątna</div>
+						<div>
+							<img src="images/w5_14.png" alt="" />
+						</div>
+					</div>
+					<div class="blok">
+						<div>Fala piłowa</div>
+						<div>
+							<img src="images/w5_15.png" alt="" />
+						</div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Sygnał okresowy</h3>
+					<p>
+						Sygnałem okresowym jest sygnał powtarzający się w równych odstępach czasu nazywanych okresem sygnału \[U(t+T) =
+						U(t)\]
+					</p>
+					<img src="images/w5_16.png" alt="" />
+					<p>
+						Okres sygnału: \(T\) <br />
+						Częstotliwość: \(f = \frac{1}{T}\) - jednostka Herc [Hz] = \(\frac{1}{s}\)
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Sygnał cyfrowy</h3>
+					<div class="blok">
+						<div>
+							<p>
+								<span class="pog">Sygnał skwantowany</span> <br />
+								(dyskretny w wartościach <br />ciągły w czasie)
+							</p>
+						</div>
+						<div><img src="images/w5_17.png" alt="" /></div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Sygnał cyfrowy</h3>
+					<div class="blok">
+						<div>
+							<p>
+								<span class="pog">Sygnał cyfrowy</span> <br />
+								(dyskretny w wartościach i w czasie)
+							</p>
+						</div>
+						<div><img src="images/w5_18.png" alt="" /></div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Klasyfikacja sygnałów</h3>
+					<div class="blok">
+						<div>
+							<p>
+								<span class="pog">Sygnał analogowy</span> <br />
+								(ciągły w wartościach i w czasie)
+							</p>
+						</div>
+						<div><img src="images/w5_19.png" alt="" /></div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Sygnał cyfrowy</h3>
+					<div class="blok">
+						<div>
+							<p>
+								<span class="pog">Sygnał spróbkowany</span> <br />
+								(ciągły w wartościach, <br />dyskretny w czasie)
+							</p>
+						</div>
+						<div><img src="images/w5_18.png" alt="" /></div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Sygnał elektryczny</h3>
+					<p>
+						<span class="pog">Sygnał</span> definiowany jest jako funkcja czasu (i przestrzenna) dowolnej wielkości o
+						charakterze energetycznym, w którym można wyróżnić dwa elementy: noścnik i parametr informacyjny
+					</p>
+					<p>
+						W zależności od rodzaju nośnika wyróżnia się <span class="pog">sygnały elektryczne</span>, magnetyczne,
+						elektromagnetyczne (w tym świetlne), akustyczne, mechaniczne, cieplne.
+					</p>
+					<p>Parametrm informacyjnym może być np. amplituda, częstotliwość, faza, szerokość impulsu</p>
+					<h5>Sygnały elektryczne</h5>
+					\[U(t,\vec{x}), I(t, \vec{x}), Q(t, \vec{x})\]
+					<p>
+						W układach skupionych czyli takich, których rozmiary są znacznie mniejsze niż długość fali, sygnały moga być
+						traktowane jako funckje jedynie czasu: \[U(t),I(t)\]
+					</p>
+				</section>
+			</div>
+		</div>
+		<script src="reveal.js"></script>
+		<!-- reveal.js plugins -->
+		<script src="notes.js"></script>
+		<script src="search.js"></script>
+		<script src="zoom.js"></script>
+		<script src="some.js"></script>
+	</body>
+</html>
