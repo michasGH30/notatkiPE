@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+		<title>Fizyka - Wykład 2</title>
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" href="reveal.css" />
+		<link rel="stylesheet" href="some.css" />
+		<link rel="stylesheet" href="black.css" id="theme" />
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="title-slide">
+					<h1 class="title">Fizyka - Wykład 2</h1>
+				</section>
+				<section class="slide level1">
+					<h3>Wersory a iloczyn wektorowy</h3>
+					<img src="images/f_2_1.png" alt="" /><br />
+					\[(\vec{b} \ \text{x} \ \vec{c}) = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k}\\ b_x & b_y & b_z\\ c_x & c_y & c_z
+					\end{vmatrix}\]
+					<p>Gdzie \(\vec{i} = [1, 0, 0]\), \(\vec{j} = [0, 1, 0]\), \(\vec{k} = [0, 0, 1]\)</p>
+				</section>
+				<section class="slide level1">
+					<h3>Tor, ruch, droga</h3>
+					<p><span class="pog">Torem</span> nazywamy linię zakreśloną przez wybrany punkt poruszającego się ciała.</p>
+					<p>Podział ruchów ze względu na w.w.:</p>
+					<p>
+						<span class="pog">Ruch: </span> <br />
+						Prostoliniowy <br />
+						Krzywoliniowy <br />
+						Ruch po okręgu
+					</p>
+					<p><span class="pog">Droga</span> jest to długość odcinka toru pomiędzy dwoma wybranymi położeniami.</p>
+					<p>
+						Wektor przesunięcia jest to wektor o początku w punkcie odpowiadającym położeniu początkowemu ciała, a o końcu
+						odpowiadającym położeniu końcowemu ciała.
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Ruch jednostajnie przyspieszony prostoliniowy</h3>
+					<div class="blok">
+						<div>
+							<p>prędkość zmienia się równomiernie (jednostajnie) - przyspieszenie ma stała wartość.</p>
+							\[a = \frac{v-v_2}{t}\] \[a = \frac{\text{d}v}{\text{d}t}\] \[ v = v_0 + at\] \[x = x_0 + \overline{v}t\]
+							\[\overline{x} = \frac{v_0+v}{2} \ \text{Prędkośc chwilowa}\] \[x = x_0 + v_st+\frac{at^2}{2}\]
+						</div>
+						<div>
+							<div class="blok">
+								<div><img src="images/f_2_w1.png" alt="" /></div>
+								<div><img src="images/f_2_w2.png" alt="" /></div>
+								<div><img src="images/f_2_w3.png" alt="" /></div>
+							</div>
+							<div class="blok">
+								<div><img src="images/f_2_w4.png" alt="" /></div>
+								<div><img src="images/f_2_w5.png" alt="" /></div>
+								<div><img src="images/f_2_w6.png" alt="" /></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Przemiesczenie, prędkość oraz przyspieszenie w 2D</h3>
+					<p>
+						\[f = ix + jy\] \[v = \frac{\text{d}f}{\text{d}t} = i\frac{\text{d}x}{\text{d}t} + j\frac{\text{d}y}{\text{d}t} =
+						ix_f + jy_f\] \[a = \frac{\text{d}v}{\text{d}t} = i\frac{\text{d}x_f}{\text{d}t} + j\frac{\text{d}y_f}{\text{d}t} =
+						ia_x + ja_y\]
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Ruch jednostajny po okręgu</h3>
+					<div class="blok">
+						<div>
+							<p>
+								wektor \(\Delta v\) jest <span class="poch">prostopadły do toru</span> - pokrywa się z kierunkiem promienia
+								i jest zwrócony do środka okregu, zatem i wektor przemieszczenia ma taki sam kierunek i zwrot. W ruchu po
+								okręgu przyspieszenie to jest <span class="poch">przyspieszeniem dośrodkowym</span> (zwrócone do środka
+								okręgu), wruchu po dowolnej krzywej <span class="poch">przypieszeniem normalnym \(a_n\)</span> (jest
+								prostopadłe do toru) lub <span class="poch">raidalnym \(a_r\)</span> (jest skierowane wzdłuż promienia).
+								Przyspieszenie normalne jest związane ze zmianą prędkości, a przyspieszenie styczne za zmianę jej wartości.
+							</p>
+						</div>
+						<div>
+							<img src="images/f_2_2.png" alt="" />
+							\[|PP^{\prime}|\] \[\frac{\Delta v}{v} = \frac{l}{R}\] \[\Delta v = \frac{v^2\Delta t}{R}\] \[a_n = a_r =
+							\frac{\Delta v}{\Delta t} = \frac{v^2}{R}\]
+						</div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Ruch obrotowy</h3>
+					<div class="blok">
+						<div>
+							<p>
+								Ruch, w którym wszystkie punkty ciała poruszają sie po okręgach o środkach leżących na jednej prostej zwanej
+								osią obrotu. np. ruch Ziemi wokół własnej osi
+							</p>
+						</div>
+						<div>
+							<img src="images/f_2_3.png" alt="" />
+						</div>
+					</div>
+					<p>
+						Wektory przyspieszenia i prędkości ciała poruszającego się jednostajnie po okręgu, w kierunku przeciwnym do ruchu
+						wskazówek zegara. Obydwa mają stałą długość, lecz ich kierunki zmieniają się w sposób ciągły.
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Mechanika</h3>
+					<p>
+						Opisuje ruch i odkształcenia ciał materialnych lub ich części na skutek wzajemnych oddziaływań oraz bada stan
+						równowami między nimi.
+					</p>
+					<p>
+						Zajmiemy się opisem ruchu rozumianym jako zmiany położenia jednych ciał względem innych, które nazywamy układem
+						odniesienia.
+					</p>
+					<p>
+						Zwróćmy uwagę, że to samo ciało może poruszać się względem jednego układu odniesienia, a spoczywać względem innego.
+						Oznacza to, że tuch jest pojęciem względnym.
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Dynamika</h3>
+					<p>
+						Zajmuje się ruchem ciał materialnych pod działaniem sił. Głównym zadaniem dynamiki jest opis ruchu ciał pod
+						działaniem samych sił. W zależności od tego, jakim modelem mechanicznym dynamika się zajmuje, wyróżniamy dynamike
+						punktu materialnego, bryły sztywnej, dynamikę płynów.
+					</p>
+					<p>
+						Na ciało może działać jednoczesnie więcej niż jedna siła. W takiej sutyacji wpływy od wszystkich sił sumują się. W
+						efekcie otrzymujemy "nową siłę" <span class="pog">siłę wypadkową</span>.
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>I zasada Newtona</h3>
+					<p>
+						W wersji oryginalnej: <br />
+						Każde ciało trwa w swym stabnie spoczynku lub ruchu prostoliniowym jednostajnym, jeżeli siły przyłożone nie zmuszą
+						ciała do zmiany tego stanu.
+					</p>
+					<p>O takim ruchu mówimy czasem jako o ruchu swobodnym.</p>
+					<p>
+						Jeżeli na ciało nie działa ządna siła lub działające siły równowazą się, to ciało pozostaje w spoczynku lub porusza
+						się ruchem jednostajnym prostoliniowym (po prostej ze stałła prędkością).
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>II zasada Newtona</h3>
+					<p>
+						W wersji oryginalnej: <br />
+						Zmiana ruchu jest prorocjonalna do przyłożonej siły poruszającej i odbywa się wkirunku prostej, wzdłuż której siła
+						jest przyłożona
+					</p>
+					<p>Tempo zmiany pędu ciała jest równa sile wypadkowej działającej na to ciało.</p>
+					<p>
+						Mniej ogólnie: <br />
+						Przyspieszenie z jakim porusza się ciało jest proporcjonalne do działającej siły i odwrotnie proporcjonalne do masy
+						ciała. Kierunek i zwrot przyspieszenia jest zgodny z kierunkiem i zwrotem siły. \[a = \frac{F}{m}, \ F = ma\]
+					</p>
+				</section>
+			</div>
+		</div>
+		<script src="reveal.js"></script>
+		<!-- reveal.js plugins -->
+		<script src="notes.js"></script>
+		<script src="search.js"></script>
+		<script src="zoom.js"></script>
+		<script src="some.js"></script>
+	</body>
+</html>

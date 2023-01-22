@@ -267,6 +267,183 @@
 						</div>
 					</div>
 				</section>
+				<section class="slide level1">
+					<h3>Połączenie RLC z użyciem liczb zespolonych</h3>
+					<h5>Równoległe połacznie RLC pojęcie <span class="pod">admitancji zastępczenj Y</span></h5>
+					<p>
+						\[I = I_R + j(I_C-I_L)=[G+j(B_C-B_L)]U_{rms} = (G+jB)U_{rms} = YU_{rms}\] \[Y=G+jB=\sqrt(G^2+B^2)\angle
+						\arctan(\frac{B}{G})=|Y|\angle\phi\] Takim prostym układem równoległym można zastąpić każdą sieć pasywną. Jest on
+						równoważny szeregowemu obwodowi zastępczemu, który opisano wcześniej z użyciem impedancji. <br />
+						<span class="pog">Admitancja zastępcza jest odwrotnością impedancji zastępczej i odwrotnie.</span>
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Trójkąt impedancji</h3>
+					<p>
+						Związek impedancji \(Z\) z jej składowymi \(R\) oraz \(X\) można zobrazować na płaszyczyźnie zespolonej za pomocą
+						trójkąta impednacji. Obwód ma charakter indukcyjny, jeżeli \(X_L>X_C\), a pojemnościowy, gdy \(X_C>X_L\)
+					</p>
+					<img src="images/w6_13.png" alt="" />
+					<p>
+						Pojedyńczą impedancją można zastąpić każdą nawet bardzo skomplikowaną sieć elementów \(RLC\). Część rzeczywista
+						impedancji zastepcznej - rezystancja zastępcza - stanowi miarę oddziaływania oporników z wnętrza siecie na obwód
+						zewnętrzny, do którego jest dołączona. Podobnie część reaktancyjna impedancji zastępcznej - reaktancja zastępcza -
+						pozwala stwierdzić, jak silny jest łączny wpływ kondensatorów oraz cewek i które elementy odgrywają rolę wiodącą.
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Połączenie RLC z użyciem liczb zespolonych</h3>
+					<h5>Szeregowe połacznie RLC pojęcie <span class="pod">impedancji zastępczenj Z</span></h5>
+					<p>
+						Wypadkowe napięcie \(U\) jest wektorową sumą napięć na poszczególnych elementach.
+						\[U=U_R+U_L+U_C=[R+j(X_L-X_C)]I_{rms}=(R+jX)I_{rms}=ZI_{rms}\] gdzie \(X=X_L-X_C\), a \[Z =
+						R+jX=\sqrt(R^2+X^2)\angle\arctan(\frac{X}{R})=|Z|\angle\phi\] jest impednacją zastępczą. Wartość skuteczna
+						\[U_{rms}=|Z|I_{rms}\] Argument impedancji \(\phi\) określa przesunięcia fazowe między płynącymi prze nią prądem a
+						napięciem na niej.
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Reguła CIUL</h3>
+					<p>
+						W przyswojeniu co za czym się spóźnia, jeśli chodzi o cewkę i kondensator, pomocna może być reguła mnemotechniczna
+						zwana CIUL.
+					</p>
+					<p>C - kondensator, I - najpierw natężenie, U - napięcie później</p>
+					<p>L - cewka, U - najpierw napięcie, I - natężenie później</p>
+				</section>
+				<section class="slide level1">
+					<h3>Elementy RLC - podsumowanie</h3>
+					<img src="images/w6_14.png" alt="" />
+				</section>
+				<section class="slide level1">
+					<h3>Kondensator</h3>
+					<p>
+						\[i_C(t) = I_m\sin(\omega t)\] \[u_C(t) = u_C(t) = -\frac{1}{\omega C}\cos(\omega t)=\frac{1}{\omega
+						C}I_M\sin(\omega t - 90^{\circ})\] \[U_C=\frac{I_M}{\sqrt(2)\omega C}\angle -90^{\circ} = \frac{U_m}{\sqrt(2)}\angle
+						-90^{\circ}=U_{C_{rms}}\angle -90^{\circ}\] \[U_C = U_{C_{rms}}\cos(-90^{\circ}) +
+						jU_{rms}\sin(-90^{\circ})=-jU_{C_{rms}}=-j\frac{I_{rms}}{\omega C}\]
+					</p>
+					<img src="images/w6_15.png" alt="" />
+				</section>
+				<section class="slide level1">
+					<h3>Kondensator cd.</h3>
+					<p>
+						Niezaleznie od kształtu przebiegu czasowego prądu i napięcia, dla kondensatora liniowego
+						\[i=C\frac{\text{d}u}{\text{d}t}\] Jeżeli \[u(t) = \sqrt{2}U_{sk}\sin(\omega t + \alpha)\] to \[i(t) =
+						\sqrt{2}\omega C U_{sk}\cos(\omega t + \alpha) = \sqrt{2}\omega CU_{sk}\sin(\omega t + \alpha + 90^{\circ})\]
+						Wniosek: napięcie spóźnia się za prądem o \(90^{\circ}\) - CIU - w kondensatorze najpierw natężenie a potem napięcie
+						- napięcie spóźnia się.
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Reaktancja indukcyjna a częstotliowść</h3>
+					<div class="blok">
+						<div>
+							<p>Reaktancja indukcyjna zalezy od częstotliwości prądu płynącego przez cewkę.</p>
+							<p>Im większa częstotliowść tym większa reaktancja cewki (tym większy opór stawia)</p>
+							<p>dla prądu stałego (\(\omega = 0\)) cewka stanowi zwarcie, gdyż wtedy \(X_L=0\)</p>
+							<p>
+								dla bardzo dużych częstotliowści cewka stanowi praktycznie przerwę (wykorzystuje się to do tłumienia prądów
+								o dużych częstotliowściach).
+							</p>
+						</div>
+						<div>
+							<img src="images/w6_16.png" alt="" />
+						</div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Reaktancja indukcyjna</h3>
+					<p>
+						Wielkość \[X_L=\omega L\] nazywamy <span class="pog">reaktancją indukcyjną</span> albo
+						<span class="pog">oporem biernym indukcyjnym</span>.
+					</p>
+					<p>Reaktancję wyraża się w omach.</p>
+					<p>
+						Zależnośc pomiędzy wartościami skutecznymi prądu i napięcie na cewce ma postać (<span class="pog"
+							>prawo Ohma dla cewki</span
+						>) \[U_{sk} = X_LI_{sk}\]
+					</p>
+					<p>Często zamiast indukcyjności \(L\) podaje się reaktancję \(X_L\).</p>
+				</section>
+				<section class="slide level1">
+					<h3>Cewka</h3>
+					<p>
+						\[i_L(t) = I_m\sin(\omega t)\] \[u_L(t) = u_C(t) = \omega L\cos(\omega t)=\omega LI_M\sin(\omega t + 90^{\circ})\]
+						\[U_L=\frac{\omega LI_M}{\sqrt(2)}\angle 90^{\circ} = \frac{U_m}{\sqrt(2)}\angle 90^{\circ}=U_{L_{rms}}\angle
+						90^{\circ}\] \[U_{L_{rms}} = \frac{U_m}{\sqrt{2}} = \frac{\omega L I_m}{\sqrt{2}}\]
+						\[U_L=U_{L_{rms}}([\cos(90^{\circ})] ->[0] + j [\sin(90^{\circ})] ->[1]) = jU_{L_{rms}} = j\omega L I_{L_{rms}}\]
+					</p>
+					<img src="images/w6_17.png" alt="" />
+				</section>
+				<section class="slide level1">
+					<h3>Cewka cd.</h3>
+					<p>
+						Niezaleznie od kształtu przebiegu czasowego prądu i napięcia, dla cewki liniowej zachodzi zależność
+						\[u=L\frac{\text{d}i}{\text{d}t}\] Jeżeli \[i(t) = \sqrt{2}I_{sk}\sin(\omega t + \alpha)\] to \[u(t) =
+						\sqrt{2}\omega L U_{sk}\cos(\omega t + \alpha) = \sqrt{2}\omega LI_{sk}\sin(\omega t + \alpha + 90^{\circ})\]
+						Wniosek: napięcie wyprzedza prąd o \(90^{\circ}\) - LUI - w cewce najpierw napięcie a potem natężenie - napięcie
+						wyprzedza.
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Rezystor</h3>
+					<p>
+						Niezaleznie od kształtu przebiegu czasowego prądu i napięcia, dla rezystora liniowego zachodzi zależność \[u=Ri\]
+						Jeżeli \[i(t) = \sqrt{2}I_{sk}\sin(\omega t + \alpha)\] to \[u(t) = \sqrt{2}R I_{sk}\sin(\omega t + \alpha) \]
+						\[U_{sk}=RI_{sk}\] Wniosek: prąd i napięcie rezystora są w fazie, od sibie różni je jedynie amplituda(wartość
+						maksymalna). Wartość \(I_m\) jest mniejsze od \(U_m\).
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Zapis w notacji zespolonej dla podanych wartości</h3>
+					<p>
+						Napięcie, którego przebieg jest określony wzorem \(u(t)=10\sin(100\omega t + 30^{\circ})V\), można opisać w notacji
+						zespolonej na trzy równoważne sposoby:
+					</p>
+					<p>
+						postać prostokątna: \[\frac{10}{\sqrt{2}}\cos(30^{\circ}) + j\frac{10}{\sqrt{2}}\sin(30^{\circ}) = 6,12 + j3,54V\]
+					</p>
+					<p>postać biegunowa: \[\frac{10}{\sqrt{2}}\angle30^{\circ}V\]</p>
+					<p>postać wykładnicza: \[\frac{10}{\sqrt{2}}\text{e}^{j30^{\circ}}V\]</p>
+				</section>
+				<section class="slide level1">
+					<h3>Napięcie sinusoidalne z uzyciem liczb zespolonych</h3>
+					<p>Załóżmy, że dane jest napięcie sinusoidalne \[u(t) = U_m\sin(\omega t + \theta)\]</p>
+					<p>Liczbę zespoloną \(U\), która reprezentuje napięcie, można przedstawiać którymkolwiek ze sposobów wprowadzonych:</p>
+					<p>postać prostokątna: \[U=U_M\cos(\theta) + jU_m\sin(\theta) = \text{Re}U+j\text{Im}U\]</p>
+					<p>postać biegunowa: \[U=U_m\angle\theta\]</p>
+					<p>postać wykładnicza: \[U=U_m\text{e}^{j\theta}\]</p>
+					<p>
+						Aby ułatwić obliczanie mocy, zwykle w notacji zespolonej wykorzystuje się \(U_{rms}\) zamiast \(U_m\)
+						\[U=U_{rms}\cos(\theta)+jU_{rms}\sin(\theta)=U_{rms}\angle\theta=U_{rms}\text{e}^{j\theta}\]
+					</p>
+				</section>
+				<section class="slide level1">
+					<h3>Źródło napięcia i źródło prądu</h3>
+					<div class="blok">
+						<div>
+							<p>Źródła napięcia zmiennego będziemy oznaczać tak samo jak stałego, lecz bez symboli "+" i "-".</p>
+							<p>Strzałka napięcia sinusoidalnego wskazuje wyższy potencjał dla dodatnich chwilowych wartości napięcia.</p>
+							<p>
+								Strzłka prądu sinusoidalnego wskazuje kierunek ruchu ładunków dodatnich dla dodatnich wartości chwilowego
+								pradu.
+							</p>
+						</div>
+						<div>
+							<img src="images/w6_18_1.png" alt="" /> <br />
+							<img src="images/w6_18_2.png" alt="" />
+						</div>
+					</div>
+				</section>
+				<section class="slide level1">
+					<h3>Elementy obwodu prądu sinusoidalnego</h3>
+					<p>Typowy obwód prądu sinusoidalnego zawiera:</p>
+					<p><span class="pog">Rezystory</span> (element pasywny, czynny)</p>
+					<p><span class="pog">Cewki</span> (element pasywny, bierny)</p>
+					<p><span class="pog">Kondensatory</span> (element pasywny, bierny)</p>
+					<p><span class="pog">Elementy źródłowe</span> tj. źródła napięcia i prądu sinusoidalnego (elementy aktywne).</p>
+				</section>
 			</div>
 		</div>
 		<script src="reveal.js"></script>
