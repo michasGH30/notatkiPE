@@ -1,0 +1,29 @@
+body {
+	background-color: #191919;
+	font-size: 25px;
+	color: #fff;
+	text-align: center;
+}
+a {
+	color: #42affa;
+	text-decoration: none;
+}
+a:hover {
+	color: #8dcffc;
+}
+.blok {
+	display: flex;
+	justify-content: center;
+}
+.blok > div {
+	padding: 100px;
+}
+h3 {
+	color: red;
+}
+h4 {
+	color: rgb(1, 255, 1);
+}
+h5 {
+	color: rgb(152, 91, 251);
+}

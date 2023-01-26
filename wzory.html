@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Wzory - elektronika</title>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<link rel="stylesheet" href="wzory.css" />
+	</head>
+	<body>
+		<h3>Natężenie pola elektrycznego</h3>
+		<p>
+			siła elektryczna: \[F=k\frac{q_1q_2}{r^2}\] \(q_1, \ q_2\) - ładunki określone w kulombach [C] <br />
+			\(r\) - promień w metrach <br />
+			\(k\) - współczynnik proporcjonalności \(\frac{1}{4\pi\varepsilon_0}\) <br />
+			\(\varepsilon_0 \approx 8,854 * 10^{-12}\) - przenikalność elektryczna <br />
+			natężenie pola: \[E=\frac{F}{q_0}\] \(q_0\) - ładunek próbny <br />
+			po połączeniu: \[E=k\frac{q}{r^2}\] inaczej szybkość zmian ładunku: \[i(t) = \frac{\text{d}q(t)}{\text{d}t}\]
+		</p>
+		<h3>Potencjał i napięcie elektryczne</h3>
+		<p>
+			Napięcie to praca potrzebna aby przesunąć ładunek próbny \(q_0\): \[U=\frac{W}{q_0}\] Praca jest równa sile pomnozonej przez
+			przemieszczenie: \[U=k\frac{q}{r}\]\(V\) - jednostka
+		</p>
+		<h3>Prąd stały</h3>
+		<p>prąd stały - \(I\)</p>
+		<h3>Prąd zmienny</h3>
+		<p>
+			prąd zmienny - \(i(t)\) <br />
+			\(T\) - okres przebiegu <br />
+			\(f=frac{1}{T}\) - częstotliwość w hercach [Hz] <br />
+			napięcie: \(u(t)=\sin t = U_m\sin(\omega t + \phi)\) <br />
+			\(U_m\) - amplituda, wartość maksymalna/szczytowa <br />
+			\(\omega\) - prędkość kątowa, pulsacja <br />
+			\(\phi\) - przesunięcie fazowe, kąt fazowy <br />
+			natężenie: \(i(t)=I_m\sin(\omega t + \theta_i)\)
+		</p>
+		<h3>Prawo Ohma</h3>
+		<p>\[I=\frac{U}{R}\] \[U=RI\]</p>
+		<h3>Moc elektryczna</h3>
+		<p>jednostka - \(W\) - wat \[p(t)=\frac{\text{d}W(t)}{\text{d}t}\] \[p(t)=u(t)i(t)\]</p>
+		<h3>Napięciowe prawo Kirchhoffa</h3>
+		<p>\[\sum_{k=1}^l \pm U_k = 0\] w kazdym oczku obwodu algebraicznych suma \(l\) napięć jest równa 0</p>
+		<h3>Dzielnik napięcia</h3>
+		<p>\[U_1=\frac{R_1}{R_1+R_2}U\] \[U_2=\frac{R_2}{R_1+R_2}U\]</p>
+		<h3>Prądowe prawo Kirchhoffa</h3>
+		<p>\[\sum_{k=1}^B \pm I_k = 0\] suma wszystkich \(B\) prądów gałęziowych jest równa 0</p>
+		<h3>Dzielnik pradu</h3>
+		<p>\[I_1=\frac{R_2}{R_1+R_2}U\] \[I_2=\frac{R_1}{R_1+R_2}U\]</p>
+		<div class="blok">
+			<div>
+				<h4>Rezystor</h4>
+				<p>jednostka - \(\Omega\) - om</p>
+				<p>odwrotność: konduktancja \(\frac{1}{R}\) - simens</p>
+				<p>
+					rezystancja: \(R=\rho\frac{l}{A}\) <br />
+					\(\rho\) - rezystywność materiału <br />
+					\(l\) - długość przewodu <br />
+					\(A\) - pole przekroju poprzecznego
+				</p>
+				<h5>Szeregowe połączenie rezystorów</h5>
+				<p>\[R=R_1+R_2+R_3\]</p>
+				<h5>Równoległe połączenie rezystorów</h5>
+				<p>\[\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}\]</p>
+				<h5>Prąd zmienny</h5>
+				<p>
+					napięcie: \(u(t)=U_m\sin(\omega t + \omega)\) <br />
+					natężenie: \(i(t)=\frac{u(t)}{R}=\frac{U_m}{R}\sin(\omega t + \theta) = I_m\sin(\omega t + \theta)\)
+				</p>
+				<h5>Postać zespolona</h5>
+				<p>\[U_{R_{rms}} = \frac{U_m}{\sqrt{2}} = RI_{R{rms}}\]</p>
+			</div>
+			<div>
+				<h4>Kondensator</h4>
+				<p>jednostka - \(F\) - farad</p>
+				<p>pojemność: \(C=\frac{q}{U}\)</p>
+				<p>odwrotność: elastancja \(\frac{1}{C}\)</p>
+				<h5>Szeregowe połączenie kondensatorów</h5>
+				<p>\[\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + \frac{1}{C_3}\]</p>
+				<h5>Równoległe połączenie kondensatorów</h5>
+				<p>\[C = C_1 + C_2 + C_3\]</p>
+				<h5>Prąd zmienny</h5>
+				<p>
+					natężenie: \(i_C(t)=\omega CU_m\sin(\omega t + \theta_u + \frac{\pi}{2})\) <br />
+					\(I_m = \omega CU_m\) <br />
+					lub: \(U_m=\frac{1}{\omega C}I_m\) <br />
+					i \(\theta_i=\theta_u + \frac{\pi}{2}\)
+				</p>
+				<h5>Reaktancja pojemnościowa/opór bierny</h5>
+				<p>\(X_C=\frac{1}{\omega C}\)</p>
+				<h5>Odwrotność reaktancji/susceptancja pojemnościowa</h5>
+				<p>\(B_C=\frac{1}{X_C} = \omega C\)</p>
+				<h5>Postać zespolona</h5>
+				<p>\[-jU_{C_{rms}} = -j\frac{I_{rms}}{\omega C}\]</p>
+			</div>
+			<div>
+				<h4>Cewka</h4>
+				<p>jednostka - \(H\) - henr</p>
+				<p>\(L\) - indukcyjność</p>
+				<h5>Szeregowe połączenie cewek</h5>
+				<p>\[L=L_1+L_2+L_3\]</p>
+				<h5>Równoległe połączenie cewek</h5>
+				<p>\[\frac{1}{L} = \frac{1}{L_1} + \frac{1}{L_2} + \frac{1}{L_3}\]</p>
+				<h5>Prąd zmienny</h5>
+				<p>
+					\[u_L(t)=L\frac{\text{d}i_L(t)}{\text{d}t}\] napięcie: \(u_L(t)=\omega LI_m\sin(\omega t + \theta_i + \frac{\pi}{2})\)
+					<br />
+					\(U_m = \omega LI_m\) <br />
+					i \(\theta_u=\theta_i + \frac{\pi}{2}\)
+				</p>
+				<h5>Reaktancja indukcyjna/opór bierny</h5>
+				<p>\(X_L=\omega L\)</p>
+				<h5>Odwrotność reaktancji/susceptancja indukcyjna</h5>
+				<p>\(B_L=\frac{1}{X_L} = \frac{1}{\omega L}\)</p>
+				<h5>Postać zespolona</h5>
+				<p>\[jU_{L_{rms}} = j \omega L I_{L_{rms}}\]</p>
+			</div>
+		</div>
+		<h3>Impedancja - połączenie szeregowe</h3>
+		<p>
+			Abstrakcyjny element sieci, który zastępuje połączenie \(RLC\) <br />
+			\(u(t)=|Z|I_m\sin(\omega t + \theta_i + \arctan(\frac{X}{R}))\) <br />
+			\(|Z|=\sqrt{R^2 + X^2}\) gdzie \(X=X_L-X_C\) - wypadkowa reaktancja połączenia cewki i kondensatora
+		</p>
+		<h3>Impedancja - połączenie równoległe</h3>
+		<p>
+			Abstrakcyjny element sieci, który zastępuje połączenie \(RLC\) <br />
+			\(u(t)=|Y|U_m\sin(\omega t + \theta_u + \arctan(\frac{B}{G}))\) <br />
+			\(|Y|=\sqrt{G^2 + B^2}\) gdzie \(B=B_C-B_L\) - wypadkowa admitancja połączenia cewki i kondensatora
+		</p>
+		<h3>Wartość średnia</h3>
+		<p>
+			pole powierzchni obszaru, który wyznaczają opisana funkcja, granice jej okresu oraz oś czasu.
+			\[F_{avg}=\frac{1}{T}\int_{t_1}^{t_1 + T}f(t)\text{d}t\]
+		</p>
+		<h3>Wartość skuteczna (rms)</h3>
+		<p>\[F_{rms} = \sqrt{(f(t)^2)_{avg}} = \frac{F_m}{\sqrt{2}} = 0,707 I_m\]</p>
+		<h3>Współczynnik kształtu</h3>
+		<p>\[\frac{\text{wartosc skuteczna}}{\text{wartosc srednia}} = \frac{\frac{I_m}{\sqrt{2}}}{\frac{2}{\pi}I_m} = 1,11\]</p>
+		<h3>Współczynnik szczytu</h3>
+		<p>
+			\[\frac{\text{wartosc szczytowa}}{\text{wartosc skuteczna}} = \frac{U_m}{U_{rms}} = \frac{U_m}{\frac{U_m}{\sqrt{2}}} = 1,414\]
+		</p>
+		<h3>Algebra zespolona</h3>
+		<p>
+			Liczby zepolone: \[z=x+jy\] j: \[j=\sqrt{-1}\] sprżeżenie: \[\overline{z}=\overline{x-jy} = x+yj=z\] moduł:
+			\[|z|=\sqrt{x^2+y^2}\] postać trygonometryczna: \[\tan(\theta) = \frac{x}{y}\] \[z = |z|(\cos(\theta)+j\sin(\theta))\] postać
+			wykładnicza: \[|z|\text{e}^{j \theta}\]
+		</p>
+	</body>
+</html>
